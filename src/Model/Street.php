@@ -12,44 +12,44 @@ namespace VM5\Econt\Model;
 class Street
 {
     /**
-     * @var string
+     * @var string|null
      */
     private $name;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $number;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $block;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $entrance;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $floor;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $apartment;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $other;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -66,9 +66,9 @@ class Street
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getNumber(): string
+    public function getNumber(): ?string
     {
         return $this->number;
     }
@@ -85,9 +85,9 @@ class Street
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getBlock(): string
+    public function getBlock(): ?string
     {
         return $this->block;
     }
@@ -104,9 +104,9 @@ class Street
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getEntrance(): string
+    public function getEntrance(): ?string
     {
         return $this->entrance;
     }
@@ -123,9 +123,9 @@ class Street
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getApartment(): string
+    public function getApartment(): ?string
     {
         return $this->apartment;
     }
@@ -142,9 +142,9 @@ class Street
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOther(): string
+    public function getOther(): ?string
     {
         return $this->other;
     }
@@ -161,9 +161,9 @@ class Street
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getFloor(): string
+    public function getFloor(): ?string
     {
         return $this->floor;
     }
