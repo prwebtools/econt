@@ -1,16 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 7:24 PM
- */
 
 namespace VM5\Econt\Parser;
 
-
+use VM5\Econt\Exception\InvalidArgumentException;
 use VM5\Econt\Model\Currency;
+use VM5\Econt\Model\Error;
 use VM5\Econt\Model\LoadingPrice;
+use VM5\Econt\Model\ParcelResult;
 use VM5\Econt\Response\ParcelResponse;
 
 class ParcelResponseParser implements Parser
@@ -35,13 +31,29 @@ class ParcelResponseParser implements Parser
     {
         $response = new ParcelResponse();
 
-        $xml = $xml->result->e;
 
-        $response->setLoadingId($xml->loading_id);
-        $response->setLoadingNumber($xml->loading_num);
-        $response->setCourierRequestId($xml->courier_request_id);
-        $response->setDeliveryDate(new \DateTime($xml->delivery_date));
-        $response->setLoadingPrice($this->getLoadingPrice($xml->loading_price));
+        foreach ($xml->result->e as $row) {
+            $parcelResult = new ParcelResult();
+
+
+            $parcelResult->setLoadingId($row->loading_id);
+            $parcelResult->setLoadingNumber($row->loading_num);
+            $parcelResult->setCourierRequestId($row->courier_request_id);
+            $parcelResult->setDeliveryDate(new \DateTime($row->delivery_date));
+            $parcelResult->setLoadingPrice($this->getLoadingPrice($row->loading_price));
+
+            $error = (string)$row->error;
+            $errorCode = (string)$row->error_code;
+
+            if (!empty($error)) {
+                $errorModel = new Error();
+                $errorModel->setMessages(explode(';', $error));
+                $errorModel->setCode($errorCode);
+                $parcelResult->setError($errorModel);
+            }
+
+            $response->addParcelResult($parcelResult);
+        }
 
         return $response;
     }
