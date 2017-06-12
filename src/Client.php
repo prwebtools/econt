@@ -5,8 +5,10 @@ namespace VM5\Econt;
 
 use VM5\Econt\Parser\ParcelResponseParser;
 use VM5\Econt\Parser\Parser;
+use VM5\Econt\Parser\QuartersResponseParser;
 use VM5\Econt\Parser\ZonesResponseParser;
 use VM5\Econt\Request\ParcelRequest;
+use VM5\Econt\Request\QuartersRequest;
 use VM5\Econt\Request\ZonesRequest;
 use VM5\Econt\RequestBuilder\ParcelRequestBuilder;
 use VM5\Econt\RequestBuilder\RequestBuilder;
@@ -31,10 +33,12 @@ class Client
     private $responseParserMapping = [
         ZonesRequest::class => ZonesResponseParser::class,
         ParcelRequest::class => ParcelResponseParser::class,
+        QuartersRequest::class => QuartersResponseParser::class,
     ];
     private $requestBuilderMapping = [
         ParcelRequest::class => ParcelRequestBuilder::class,
         ZonesRequest::class => ServiceRequestBuilder::class,
+        QuartersRequest::class => ServiceRequestBuilder::class,
     ];
 
     /**

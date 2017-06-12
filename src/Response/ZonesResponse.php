@@ -26,16 +26,7 @@ class ZonesResponse
     public function addZone(Zone $zone): ZonesResponse
     {
         $this->zones[] = $zone;
-        return $this;
-    }
 
-    /**
-     * @param Zone[] $zones
-     * @return ZonesResponse
-     */
-    public function setZones(array $zones): ZonesResponse
-    {
-        $this->zones = $zones;
         return $this;
     }
 }

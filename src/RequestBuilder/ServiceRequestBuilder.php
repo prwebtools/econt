@@ -9,12 +9,14 @@
 namespace VM5\Econt\RequestBuilder;
 
 
+use VM5\Econt\Request\QuartersRequest;
 use VM5\Econt\Request\ZonesRequest;
 
 class ServiceRequestBuilder extends AbstractRequestBuilder
 {
     private $requestMapping = [
         ZonesRequest::class => 'cities_zones',
+        QuartersRequest::class => 'cities_quarters',
     ];
 
     private function getRequestType($object)
