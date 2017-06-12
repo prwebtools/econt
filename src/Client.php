@@ -10,6 +10,7 @@ use VM5\Econt\Request\ParcelRequest;
 use VM5\Econt\Request\ZonesRequest;
 use VM5\Econt\RequestBuilder\ParcelRequestBuilder;
 use VM5\Econt\RequestBuilder\RequestBuilder;
+use VM5\Econt\RequestBuilder\ServiceRequestBuilder;
 
 class Client
 {
@@ -33,6 +34,7 @@ class Client
     ];
     private $requestBuilderMapping = [
         ParcelRequest::class => ParcelRequestBuilder::class,
+        ZonesRequest::class => ServiceRequestBuilder::class,
     ];
 
     /**
@@ -127,6 +129,7 @@ class Client
         );
 
         $responseXML = $response->getBody()->getContents();
+        $responseXML = substr($responseXML, stripos($responseXML, '<?xml'));
         $responseSimpleXMLElement = new \SimpleXMLElement($responseXML);
 
         return $this->getParser($request)->parse($responseSimpleXMLElement);

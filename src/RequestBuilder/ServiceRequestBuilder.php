@@ -9,6 +9,8 @@
 namespace VM5\Econt\RequestBuilder;
 
 
+use VM5\Econt\Request\ZonesRequest;
+
 class ServiceRequestBuilder extends AbstractRequestBuilder
 {
     private $requestMapping = [
@@ -24,5 +26,7 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
     {
         $xml = new \SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><request/>');
         $xml->addChild('request_type', $this->getRequestType($request));
+
+        return $xml;
     }
 }

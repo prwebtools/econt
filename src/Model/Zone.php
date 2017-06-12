@@ -50,6 +50,7 @@ class Zone
     public function setId(int $id): Zone
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -68,6 +69,7 @@ class Zone
     public function setName(string $name): Zone
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -86,6 +88,7 @@ class Zone
     public function setNameEnglish(string $nameEnglish): Zone
     {
         $this->nameEnglish = $nameEnglish;
+
         return $this;
     }
 
@@ -104,6 +107,7 @@ class Zone
     public function setNational(bool $national): Zone
     {
         $this->national = $national;
+
         return $this;
     }
 
@@ -122,11 +126,12 @@ class Zone
     public function setIsEe(bool $isEe): Zone
     {
         $this->isEe = $isEe;
+
         return $this;
     }
 
     /**
-     * @return DateTime|null
+     * @return \DateTime|null
      */
     public function getUpdatedOn()
     {
@@ -134,12 +139,13 @@ class Zone
     }
 
     /**
-     * @param DateTime|null $updatedOn
+     * @param \DateTime|null $updatedOn
      * @return Zone
      */
     public function setUpdatedOn($updatedOn)
     {
         $this->updatedOn = $updatedOn;
+
         return $this;
     }
 }
