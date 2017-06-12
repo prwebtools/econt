@@ -11,6 +11,11 @@ namespace VM5\Econt\Model;
 
 class AddressValidation
 {
+
+    const STATUS_VALID = 'normal';
+    const STATUS_VALID_AFTER_PROCESS = 'processed';
+    const STATUS_INVALID = 'invalid';
+
     /**
      * @var string
      */
@@ -177,5 +182,20 @@ class AddressValidation
         $this->error = $error;
 
         return $this;
+    }
+
+    public function isValid()
+    {
+        return $this->getValidationStatus() == self::STATUS_VALID;
+    }
+
+    public function isValidAfterProcessed()
+    {
+        return $this->getValidationStatus() == self::STATUS_VALID_AFTER_PROCESS;
+    }
+
+    public function isInvalid()
+    {
+        return $this->getValidationStatus() == self::STATUS_INVALID;
     }
 }
