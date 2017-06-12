@@ -82,7 +82,7 @@ class Shipment
     private $packCount;
 
     /**
-     * @var int тегло (кг)
+     * @var string тегло (кг)
      */
     private $weight;
 
@@ -226,18 +226,18 @@ class Shipment
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getWeight(): int
+    public function getWeight(): string
     {
         return $this->weight;
     }
 
     /**
-     * @param int $weight
+     * @param string $weight
      * @return Shipment
      */
-    public function setWeight(int $weight): Shipment
+    public function setWeight(string $weight): Shipment
     {
         $this->weight = $weight;
 
