@@ -10,6 +10,7 @@ namespace VM5\Econt\RequestBuilder;
 
 
 use VM5\Econt\Request\AddressValidationRequest;
+use VM5\Econt\Request\OfficesRequest;
 use VM5\Econt\Request\QuartersRequest;
 use VM5\Econt\Request\ZonesRequest;
 
@@ -19,6 +20,7 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
         ZonesRequest::class => 'cities_zones',
         QuartersRequest::class => 'cities_quarters',
         AddressValidationRequest::class => 'check_address',
+        OfficesRequest::class => 'offices',
     ];
 
     private function getRequestType($object)
