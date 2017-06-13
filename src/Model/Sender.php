@@ -12,7 +12,7 @@ namespace VM5\Econt\Model;
 class Sender
 {
     /**
-     * @var string
+     * @var string|null
      */
     private $countryCode;
 
@@ -22,12 +22,12 @@ class Sender
     private $city;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $postCode;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $officeCode;
 
@@ -67,9 +67,9 @@ class Sender
     private $emailOnDelivery = false;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCountryCode(): string
+    public function getCountryCode(): ?string
     {
         return $this->countryCode;
     }
@@ -105,9 +105,9 @@ class Sender
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPostCode(): string
+    public function getPostCode(): ?string
     {
         return $this->postCode;
     }
