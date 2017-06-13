@@ -17,7 +17,7 @@ class Receiver
     private $countryCode;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $city;
 
@@ -101,9 +101,9 @@ class Receiver
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->city;
     }
