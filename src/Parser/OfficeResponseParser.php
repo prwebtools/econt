@@ -41,6 +41,7 @@ class OfficeResponseParser implements Parser
             $street->setFloor($row->address_details->et);
             $street->setApartment($row->address_details->ap);
             $street->setOther($row->address_details->other);
+            $office->setStreet($street);
 
 
             $office->setEmail($row->email);
@@ -49,6 +50,7 @@ class OfficeResponseParser implements Parser
             $office->setWorkEnd(new \DateTime($row->work_end));
             $office->setWorkBeginSaturday(new \DateTime($row->work_begin_saturday));
             $office->setWorkEndSaturday(new \DateTime($row->work_end_saturday));
+            $office->setTimePriority(new \DateTime($row->time_priority));
             $office->setUpdatedOn(new \DateTime($row->updated_time));
             $office->setHubCode($row->hub_code);
             $office->setHubName($row->hub_name);
