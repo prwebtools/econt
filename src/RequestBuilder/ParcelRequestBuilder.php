@@ -9,6 +9,30 @@ use Todstoychev\Econt\Request\ParcelRequest;
 
 class ParcelRequestBuilder extends AbstractRequestBuilder
 {
+    public function createSimpleXML($request)
+    {
+        /** @var ParcelRequest $request */
+        $xml = new \SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><parcels/>');
+        $system = $xml->addChild('system');
+        $system->addChild('validate', $request->isValidate());
+        $system->addChild('response_type', 'XML');
+        $system->addChild('only_calculate', $request->isOnlyCalculate());
+        $system->addChild('process_all_parcels', $request->isProcessAllParcels());
+        $system->addChild('email_errors_to', $request->getEmailErrorsTo());
+
+        $loadings = $xml->addChild('loadings');
+
+        foreach ($request->getLoadings() as $loading) {
+            $row = $loadings->addChild('row');
+
+            $this->addSender($row, $loading->getSender());
+            $this->addReceiver($row, $loading->getReceiver());
+            $this->addShipment($row, $loading->getShipment());
+        }
+
+        return $xml;
+    }
+
     private function addSender(\SimpleXMLElement $row, Sender $sender)
     {
         $row = $row->addChild('sender');
@@ -81,32 +105,5 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
         $row->addChild('send_date', $shipment->getSendDate());
         $row->addChild('delivery_day', $shipment->getDeliveryDate());
         $row->addChild('size_under_60cm', $shipment->isSizeUnder60cm());
-    }
-
-    public function createSimpleXML($request)
-    {
-        /** @var ParcelRequest $request */
-
-
-        $xml = new \SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><parcels/>');
-        $system = $xml->addChild('system');
-        $system->addChild('validate', $request->isValidate());
-        $system->addChild('response_type', 'XML');
-        $system->addChild('only_calculate', $request->isOnlyCalculate());
-        $system->addChild('process_all_parcels', $request->isProcessAllParcels());
-        $system->addChild('email_errors_to', $request->getEmailErrorsTo());
-
-        $loadings = $xml->addChild('loadings');
-
-        foreach ($request->getLoadings() as $loading) {
-            $row = $loadings->addChild('row');
-
-            $this->addSender($row, $loading->getSender());
-            $this->addReceiver($row, $loading->getReceiver());
-            $this->addShipment($row, $loading->getShipment());
-        }
-
-
-        return $xml;
     }
 }

@@ -2,21 +2,9 @@
 
 namespace Todstoychev\Econt;
 
-
-use Todstoychev\Econt\Parser\AddressValidationResponseParser;
-use Todstoychev\Econt\Parser\OfficeResponseParser;
-use Todstoychev\Econt\Parser\ParcelResponseParser;
 use Todstoychev\Econt\Parser\Parser;
-use Todstoychev\Econt\Parser\QuartersResponseParser;
-use Todstoychev\Econt\Parser\ZonesResponseParser;
-use Todstoychev\Econt\Request\AddressValidationRequest;
-use Todstoychev\Econt\Request\OfficesRequest;
 use Todstoychev\Econt\Request\ParcelRequest;
-use Todstoychev\Econt\Request\QuartersRequest;
-use Todstoychev\Econt\Request\ZonesRequest;
-use Todstoychev\Econt\RequestBuilder\ParcelRequestBuilder;
 use Todstoychev\Econt\RequestBuilder\RequestBuilder;
-use Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder;
 
 class Client
 {
@@ -29,24 +17,42 @@ class Client
      * @var \GuzzleHttp\Client
      */
     private $guzzle;
+
+    /**
+     * @var bool
+     */
     private $dev = false;
+
+    /**
+     * @var string
+     */
     private $username;
+
+    /**
+     * @var string
+     */
     private $password;
 
-
+    /**
+     * @var array
+     */
     private $responseParserMapping = [
-        ZonesRequest::class => ZonesResponseParser::class,
-        ParcelRequest::class => ParcelResponseParser::class,
-        QuartersRequest::class => QuartersResponseParser::class,
-        AddressValidationRequest::class => AddressValidationResponseParser::class,
-        OfficesRequest::class => OfficeResponseParser::class,
+        'Todstoychev\Econt\Request\ZonesRequest' => 'Todstoychev\Econt\Parser\ZonesResponseParser',
+        'Todstoychev\Econt\Request\ParcelRequest' => 'Todstoychev\Econt\Parser\ParcelResponseParser',
+        'Todstoychev\Econt\Request\QuartersRequest' => 'Todstoychev\Econt\Parser\QuartersResponseParser',
+        'Todstoychev\Econt\Request\AddressValidationRequest' => 'Todstoychev\Econt\Parser\AddressValidationResponseParser',
+        'Todstoychev\Econt\Request\OfficesRequest' => 'Todstoychev\Econt\Parser\OfficeResponseParser',
     ];
+
+    /**
+     * @var array
+     */
     private $requestBuilderMapping = [
-        ParcelRequest::class => ParcelRequestBuilder::class,
-        ZonesRequest::class => ServiceRequestBuilder::class,
-        QuartersRequest::class => ServiceRequestBuilder::class,
-        AddressValidationRequest::class => ServiceRequestBuilder::class,
-        OfficesRequest::class => ServiceRequestBuilder::class,
+        'Todstoychev\Econt\Request\ParcelRequest' => 'Todstoychev\Econt\RequestBuilder\ParcelRequestBuilder',
+        'Todstoychev\Econt\Request\ZonesRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
+        'Todstoychev\Econt\Request\QuartersRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
+        'Todstoychev\Econt\Request\AddressValidationRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
+        'Todstoychev\Econt\Request\OfficesRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
     ];
 
     /**
@@ -59,65 +65,20 @@ class Client
      */
     private $cachedRequestBuilders = [];
 
+    /**
+     * Client constructor.
+     *
+     * @param \GuzzleHttp\Client $guzzle
+     * @param $dev
+     * @param $username
+     * @param $password
+     */
     public function __construct(\GuzzleHttp\Client $guzzle, $dev, $username, $password)
     {
         $this->guzzle = $guzzle;
         $this->dev = $dev;
         $this->username = $username;
         $this->password = $password;
-    }
-
-    private function getEndPoint()
-    {
-        if (!$this->dev) {
-            return self::SERVICE;
-        } else {
-            return self::SERVICE_DEMO;
-        }
-    }
-
-    private function getParcelsEndPoint()
-    {
-        if (!$this->dev) {
-            return self::PARCEL;
-        } else {
-            return self::PARCEL_DEMO;
-        }
-    }
-
-
-    /**
-     * @param $object
-     * @return Parser
-     */
-    private function getParser($object)
-    {
-        $parserClass = $this->responseParserMapping[get_class($object)];
-
-        if (!isset($this->cachedParsers[$parserClass])) {
-            $this->cachedParsers[$parserClass] = new $parserClass;
-        }
-
-        return $this->cachedParsers[$parserClass];
-    }
-
-    /**
-     * @param $object
-     * @return RequestBuilder
-     */
-    private function getRequestBuilder($object)
-    {
-        $builderClass = $this->requestBuilderMapping[get_class($object)];
-
-        if (!isset($this->cachedRequestBuilders[$builderClass])) {
-            /** @var RequestBuilder $builder */
-            $builder = new $builderClass;
-            $builder->setUsername($this->username);
-            $builder->setPassword($this->password);
-            $this->cachedRequestBuilders[$builderClass] = $builder;
-        }
-
-        return $this->cachedRequestBuilders[$builderClass];
     }
 
     public function execute($request)
@@ -166,8 +127,68 @@ class Client
         $responseXML = $response->getBody()->getContents();
 
         $xml = simplexml_load_string($responseXML, 'SimpleXMLElement', LIBXML_NOCDATA);
-        $result = json_decode(json_encode((array)$xml), 1);
+        $result = json_decode(json_encode((array) $xml), 1);
 
         return $result;
+    }
+
+    /**
+     * @return string
+     */
+    private function getEndPoint()
+    {
+        if (!$this->dev) {
+            return self::SERVICE;
+        } else {
+            return self::SERVICE_DEMO;
+        }
+    }
+
+    /**
+     * @return string
+     */
+    private function getParcelsEndPoint()
+    {
+        if (!$this->dev) {
+            return self::PARCEL;
+        } else {
+            return self::PARCEL_DEMO;
+        }
+    }
+
+    /**
+     * @param $object
+     *
+     * @return Parser
+     */
+    private function getParser($object)
+    {
+        $parserClass = $this->responseParserMapping[get_class($object)];
+
+        if (!isset($this->cachedParsers[$parserClass])) {
+            $this->cachedParsers[$parserClass] = new $parserClass();
+        }
+
+        return $this->cachedParsers[$parserClass];
+    }
+
+    /**
+     * @param $object
+     *
+     * @return RequestBuilder
+     */
+    private function getRequestBuilder($object)
+    {
+        $builderClass = $this->requestBuilderMapping[get_class($object)];
+
+        if (!isset($this->cachedRequestBuilders[$builderClass])) {
+            /** @var RequestBuilder $builder */
+            $builder = new $builderClass();
+            $builder->setUsername($this->username);
+            $builder->setPassword($this->password);
+            $this->cachedRequestBuilders[$builderClass] = $builder;
+        }
+
+        return $this->cachedRequestBuilders[$builderClass];
     }
 }

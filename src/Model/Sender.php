@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: bozhidar.hristov
  * Date: 6/9/17
- * Time: 6:19 PM
+ * Time: 6:19 PM.
  */
 
 namespace Todstoychev\Econt\Model;
-
 
 class Sender
 {
@@ -62,7 +61,7 @@ class Sender
     private $phoneNumber;
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $emailOnDelivery = false;
 
@@ -76,6 +75,7 @@ class Sender
 
     /**
      * @param null|string $countryCode
+     *
      * @return Sender
      */
     public function setCountryCode($countryCode)
@@ -95,6 +95,7 @@ class Sender
 
     /**
      * @param null|string $city
+     *
      * @return Sender
      */
     public function setCity($city)
@@ -114,6 +115,7 @@ class Sender
 
     /**
      * @param null|string $postCode
+     *
      * @return Sender
      */
     public function setPostCode($postCode)
@@ -133,6 +135,7 @@ class Sender
 
     /**
      * @param null|string $officeCode
+     *
      * @return Sender
      */
     public function setOfficeCode($officeCode)
@@ -152,6 +155,7 @@ class Sender
 
     /**
      * @param null|string $name
+     *
      * @return Sender
      */
     public function setName($name)
@@ -171,6 +175,7 @@ class Sender
 
     /**
      * @param null|string $namePerson
+     *
      * @return Sender
      */
     public function setNamePerson($namePerson)
@@ -190,6 +195,7 @@ class Sender
 
     /**
      * @param null|string $email
+     *
      * @return Sender
      */
     public function setEmail($email)
@@ -209,6 +215,7 @@ class Sender
 
     /**
      * @param null|string $quarter
+     *
      * @return Sender
      */
     public function setQuarter($quarter)
@@ -228,6 +235,7 @@ class Sender
 
     /**
      * @param null|Street $street
+     *
      * @return Sender
      */
     public function setStreet($street)
@@ -247,6 +255,7 @@ class Sender
 
     /**
      * @param null|string $phoneNumber
+     *
      * @return Sender
      */
     public function setPhoneNumber($phoneNumber)
@@ -266,6 +275,7 @@ class Sender
 
     /**
      * @param bool $emailOnDelivery
+     *
      * @return Sender
      */
     public function setEmailOnDelivery($emailOnDelivery)

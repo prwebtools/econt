@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: bozhidar.hristov
  * Date: 6/9/17
- * Time: 7:54 PM
+ * Time: 7:54 PM.
  */
 
 namespace Todstoychev\Econt\Model;
-
 
 class LoadingPrice
 {
@@ -46,6 +45,7 @@ class LoadingPrice
 
     /**
      * @param string $total
+     *
      * @return LoadingPrice
      */
     public function setTotal($total)
@@ -65,6 +65,7 @@ class LoadingPrice
 
     /**
      * @param string $senderTotal
+     *
      * @return LoadingPrice
      */
     public function setSenderTotal($senderTotal)
@@ -84,6 +85,7 @@ class LoadingPrice
 
     /**
      * @param string $receiverTotal
+     *
      * @return LoadingPrice
      */
     public function setReceiverTotal($receiverTotal)
@@ -103,6 +105,7 @@ class LoadingPrice
 
     /**
      * @param string $otherTotal
+     *
      * @return LoadingPrice
      */
     public function setOtherTotal($otherTotal)
@@ -122,6 +125,7 @@ class LoadingPrice
 
     /**
      * @param Currency $currency
+     *
      * @return LoadingPrice
      */
     public function setCurrency($currency)

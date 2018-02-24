@@ -21,9 +21,10 @@ class ZonesResponse
 
     /**
      * @param Zone $zone
+     *
      * @return ZonesResponse
      */
-    public function addZone(Zone $zone): ZonesResponse
+    public function addZone(Zone $zone)
     {
         $this->zones[] = $zone;
 

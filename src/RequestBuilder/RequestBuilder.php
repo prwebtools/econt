@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 6:56 PM
- */
 
 namespace Todstoychev\Econt\RequestBuilder;
-
 
 interface RequestBuilder
 {

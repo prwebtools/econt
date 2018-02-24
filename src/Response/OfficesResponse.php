@@ -21,9 +21,10 @@ class OfficesResponse
 
     /**
      * @param Office $office
+     *
      * @return OfficesResponse
      */
-    public function addOffice(Office $office): OfficesResponse
+    public function addOffice(Office $office)
     {
         $this->offices[] = $office;
 

@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: bozhidar.hristov
  * Date: 6/13/17
- * Time: 3:54 PM
+ * Time: 3:54 PM.
  */
 
 namespace Todstoychev\Econt\Model;
-
 
 class Office
 {
@@ -32,7 +31,7 @@ class Office
     private $officeCode;
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $isMachine;
 
@@ -161,6 +160,7 @@ class Office
 
     /**
      * @param int $id
+     *
      * @return Office
      */
     public function setId($id)
@@ -180,6 +180,7 @@ class Office
 
     /**
      * @param string $name
+     *
      * @return Office
      */
     public function setName($name)
@@ -199,6 +200,7 @@ class Office
 
     /**
      * @param string $nameEnglish
+     *
      * @return Office
      */
     public function setNameEnglish($nameEnglish)
@@ -218,6 +220,7 @@ class Office
 
     /**
      * @param string $officeCode
+     *
      * @return Office
      */
     public function setOfficeCode($officeCode)
@@ -237,6 +240,7 @@ class Office
 
     /**
      * @param bool $isMachine
+     *
      * @return Office
      */
     public function setIsMachine($isMachine)
@@ -256,6 +260,7 @@ class Office
 
     /**
      * @param string $countryCode
+     *
      * @return Office
      */
     public function setCountryCode($countryCode)
@@ -275,6 +280,7 @@ class Office
 
     /**
      * @param int $cityId
+     *
      * @return Office
      */
     public function setCityId($cityId)
@@ -294,6 +300,7 @@ class Office
 
     /**
      * @param string $postCode
+     *
      * @return Office
      */
     public function setPostCode($postCode)
@@ -313,6 +320,7 @@ class Office
 
     /**
      * @param string $cityName
+     *
      * @return Office
      */
     public function setCityName($cityName)
@@ -332,6 +340,7 @@ class Office
 
     /**
      * @param string $cityNameEnglish
+     *
      * @return Office
      */
     public function setCityNameEnglish($cityNameEnglish)
@@ -351,6 +360,7 @@ class Office
 
     /**
      * @param string $address
+     *
      * @return Office
      */
     public function setAddress($address)
@@ -370,6 +380,7 @@ class Office
 
     /**
      * @param string $addressEnglish
+     *
      * @return Office
      */
     public function setAddressEnglish($addressEnglish)
@@ -389,6 +400,7 @@ class Office
 
     /**
      * @param int $quarterId
+     *
      * @return Office
      */
     public function setQuarterId($quarterId)
@@ -408,6 +420,7 @@ class Office
 
     /**
      * @param string $quarterName
+     *
      * @return Office
      */
     public function setQuarterName($quarterName)
@@ -427,6 +440,7 @@ class Office
 
     /**
      * @param string $quarterNameEnglish
+     *
      * @return Office
      */
     public function setQuarterNameEnglish($quarterNameEnglish)
@@ -446,6 +460,7 @@ class Office
 
     /**
      * @param int $streetId
+     *
      * @return Office
      */
     public function setStreetId($streetId)
@@ -465,6 +480,7 @@ class Office
 
     /**
      * @param Street $street
+     *
      * @return Office
      */
     public function setStreet($street)
@@ -484,6 +500,7 @@ class Office
 
     /**
      * @param string $phoneNumber
+     *
      * @return Office
      */
     public function setPhoneNumber($phoneNumber)
@@ -503,6 +520,7 @@ class Office
 
     /**
      * @param string $email
+     *
      * @return Office
      */
     public function setEmail($email)
@@ -522,6 +540,7 @@ class Office
 
     /**
      * @param \DateTime $workBegin
+     *
      * @return Office
      */
     public function setWorkBegin($workBegin)
@@ -541,6 +560,7 @@ class Office
 
     /**
      * @param \DateTime $workEnd
+     *
      * @return Office
      */
     public function setWorkEnd($workEnd)
@@ -560,6 +580,7 @@ class Office
 
     /**
      * @param \DateTime $workBeginSaturday
+     *
      * @return Office
      */
     public function setWorkBeginSaturday($workBeginSaturday)
@@ -579,6 +600,7 @@ class Office
 
     /**
      * @param \DateTime $workEndSaturday
+     *
      * @return Office
      */
     public function setWorkEndSaturday($workEndSaturday)
@@ -598,6 +620,7 @@ class Office
 
     /**
      * @param \DateTime $timePriority
+     *
      * @return Office
      */
     public function setTimePriority($timePriority)
@@ -617,6 +640,7 @@ class Office
 
     /**
      * @param \DateTime $updatedOn
+     *
      * @return Office
      */
     public function setUpdatedOn($updatedOn)
@@ -636,6 +660,7 @@ class Office
 
     /**
      * @param string $hubCode
+     *
      * @return Office
      */
     public function setHubCode($hubCode)
@@ -655,6 +680,7 @@ class Office
 
     /**
      * @param string $hubName
+     *
      * @return Office
      */
     public function setHubName($hubName)
@@ -674,6 +700,7 @@ class Office
 
     /**
      * @param string $hubNameEnglish
+     *
      * @return Office
      */
     public function setHubNameEnglish($hubNameEnglish)

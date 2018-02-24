@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 7:05 PM
- */
 
 namespace Todstoychev\Econt\RequestBuilder;
-
 
 abstract class AbstractRequestBuilder implements RequestBuilder
 {
@@ -33,6 +26,7 @@ abstract class AbstractRequestBuilder implements RequestBuilder
 
     /**
      * @param $request
+     *
      * @return \SimpleXMLElement
      */
     abstract public function createSimpleXML($request);

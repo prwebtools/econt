@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: bozhidar.hristov
  * Date: 6/9/17
- * Time: 6:21 PM
+ * Time: 6:21 PM.
  */
 
 namespace Todstoychev\Econt\Model;
-
 
 class Street
 {
@@ -56,6 +55,7 @@ class Street
 
     /**
      * @param null|string $name
+     *
      * @return Street
      */
     public function setName($name)
@@ -75,6 +75,7 @@ class Street
 
     /**
      * @param null|string $number
+     *
      * @return Street
      */
     public function setNumber($number)
@@ -94,6 +95,7 @@ class Street
 
     /**
      * @param null|string $block
+     *
      * @return Street
      */
     public function setBlock($block)
@@ -113,6 +115,7 @@ class Street
 
     /**
      * @param null|string $entrance
+     *
      * @return Street
      */
     public function setEntrance($entrance)
@@ -132,6 +135,7 @@ class Street
 
     /**
      * @param null|string $floor
+     *
      * @return Street
      */
     public function setFloor($floor)
@@ -151,6 +155,7 @@ class Street
 
     /**
      * @param null|string $apartment
+     *
      * @return Street
      */
     public function setApartment($apartment)
@@ -170,6 +175,7 @@ class Street
 
     /**
      * @param null|string $other
+     *
      * @return Street
      */
     public function setOther($other)

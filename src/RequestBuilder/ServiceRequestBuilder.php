@@ -1,32 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 6:58 PM
- */
 
 namespace Todstoychev\Econt\RequestBuilder;
 
-
 use Todstoychev\Econt\Request\AddressValidationRequest;
-use Todstoychev\Econt\Request\OfficesRequest;
-use Todstoychev\Econt\Request\QuartersRequest;
-use Todstoychev\Econt\Request\ZonesRequest;
 
 class ServiceRequestBuilder extends AbstractRequestBuilder
 {
     private $requestMapping = [
-        ZonesRequest::class => 'cities_zones',
-        QuartersRequest::class => 'cities_quarters',
-        AddressValidationRequest::class => 'check_address',
-        OfficesRequest::class => 'offices',
+        'Todstoychev\Econt\Request\ZonesRequest' => 'cities_zones',
+        'Todstoychev\Econt\Request\QuortersRequest' => 'cities_quarters',
+        'Todstoychev\Econt\Request\AddressValidationRequest' => 'check_address',
+        'Todstoychev\Econt\Request\OfficesRequest' => 'offices',
     ];
-
-    private function getRequestType($object)
-    {
-        return $this->requestMapping[get_class($object)];
-    }
 
     public function createSimpleXML($request)
     {
@@ -52,5 +37,10 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
         }
 
         return $xml;
+    }
+
+    private function getRequestType($object)
+    {
+        return $this->requestMapping[get_class($object)];
     }
 }

@@ -8,7 +8,6 @@ use Todstoychev\Econt\Response\AddressValidationResponse;
 
 class AddressValidationResponseParser implements Parser
 {
-
     public function parse(\SimpleXMLElement $xml)
     {
         $response = new AddressValidationResponse();

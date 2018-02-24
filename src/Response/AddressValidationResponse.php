@@ -1,19 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/12/17
- * Time: 5:48 PM
- */
 
 namespace Todstoychev\Econt\Response;
-
 
 use Todstoychev\Econt\Model\AddressValidation;
 
 class AddressValidationResponse
 {
-
     /**
      * @var AddressValidation
      */
@@ -22,16 +14,17 @@ class AddressValidationResponse
     /**
      * @return AddressValidation
      */
-    public function getAddress(): AddressValidation
+    public function getAddress()
     {
         return $this->address;
     }
 
     /**
      * @param AddressValidation $address
+     *
      * @return AddressValidationResponse
      */
-    public function setAddress(AddressValidation $address): AddressValidationResponse
+    public function setAddress($address)
     {
         $this->address = $address;
 

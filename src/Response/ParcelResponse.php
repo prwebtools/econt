@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 7:24 PM
- */
 
 namespace Todstoychev\Econt\Response;
-
 
 use Todstoychev\Econt\Model\ParcelResult;
 
@@ -36,14 +29,13 @@ class ParcelResponse
 
     /**
      * @param ParcelResult[] $parcelResults
+     *
      * @return ParcelResponse
      */
-    public function setParcelResults(array $parcelResults): ParcelResponse
+    public function setParcelResults(array $parcelResults)
     {
         $this->parcelResults = $parcelResults;
 
         return $this;
     }
-
-
 }

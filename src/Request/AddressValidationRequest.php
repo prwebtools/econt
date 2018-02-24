@@ -3,17 +3,15 @@
  * Created by PhpStorm.
  * User: bozhidar.hristov
  * Date: 6/12/17
- * Time: 5:43 PM
+ * Time: 5:43 PM.
  */
 
 namespace Todstoychev\Econt\Request;
-
 
 use Todstoychev\Econt\Model\Address;
 
 class AddressValidationRequest
 {
-
     /**
      * @var Address
      */
@@ -22,16 +20,17 @@ class AddressValidationRequest
     /**
      * @return Address
      */
-    public function getAddress(): Address
+    public function getAddress()
     {
         return $this->address;
     }
 
     /**
      * @param Address $address
+     *
      * @return AddressValidationRequest
      */
-    public function setAddress(Address $address): AddressValidationRequest
+    public function setAddress(Address $address)
     {
         $this->address = $address;
 

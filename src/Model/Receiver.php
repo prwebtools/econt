@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: bozhidar.hristov
  * Date: 6/9/17
- * Time: 6:19 PM
+ * Time: 6:19 PM.
  */
 
 namespace Todstoychev\Econt\Model;
-
 
 class Receiver
 {
@@ -91,6 +90,7 @@ class Receiver
 
     /**
      * @param null|string $countryCode
+     *
      * @return Receiver
      */
     public function setCountryCode($countryCode)
@@ -110,6 +110,7 @@ class Receiver
 
     /**
      * @param null|string $city
+     *
      * @return Receiver
      */
     public function setCity($city)
@@ -129,6 +130,7 @@ class Receiver
 
     /**
      * @param null|string $postCode
+     *
      * @return Receiver
      */
     public function setPostCode($postCode)
@@ -148,6 +150,7 @@ class Receiver
 
     /**
      * @param null|string $addressZip
+     *
      * @return Receiver
      */
     public function setAddressZip($addressZip)
@@ -167,6 +170,7 @@ class Receiver
 
     /**
      * @param null|string $officeCode
+     *
      * @return Receiver
      */
     public function setOfficeCode($officeCode)
@@ -186,6 +190,7 @@ class Receiver
 
     /**
      * @param null|string $name
+     *
      * @return Receiver
      */
     public function setName($name)
@@ -205,6 +210,7 @@ class Receiver
 
     /**
      * @param null|string $namePerson
+     *
      * @return Receiver
      */
     public function setNamePerson($namePerson)
@@ -224,6 +230,7 @@ class Receiver
 
     /**
      * @param null|string $email
+     *
      * @return Receiver
      */
     public function setEmail($email)
@@ -243,6 +250,7 @@ class Receiver
 
     /**
      * @param null|string $quarter
+     *
      * @return Receiver
      */
     public function setQuarter($quarter)
@@ -262,6 +270,7 @@ class Receiver
 
     /**
      * @param null|Street $street
+     *
      * @return Receiver
      */
     public function setStreet($street)
@@ -281,6 +290,7 @@ class Receiver
 
     /**
      * @param null|string $phoneNumber
+     *
      * @return Receiver
      */
     public function setPhoneNumber($phoneNumber)
@@ -300,6 +310,7 @@ class Receiver
 
     /**
      * @param null|string $smsNumber
+     *
      * @return Receiver
      */
     public function setSmsNumber($smsNumber)
@@ -319,6 +330,7 @@ class Receiver
 
     /**
      * @param null|BankDetails $bankDetails
+     *
      * @return Receiver
      */
     public function setBankDetails($bankDetails)
@@ -338,6 +350,7 @@ class Receiver
 
     /**
      * @param null|string $providerId
+     *
      * @return Receiver
      */
     public function setProviderId($providerId)

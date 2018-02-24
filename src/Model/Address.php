@@ -34,6 +34,7 @@ class Address
 
     /**
      * @param string $city
+     *
      * @return Address
      */
     public function setCity($city)
@@ -53,6 +54,7 @@ class Address
 
     /**
      * @param string $postCode
+     *
      * @return Address
      */
     public function setPostCode($postCode)
@@ -72,6 +74,7 @@ class Address
 
     /**
      * @param null|string $quarter
+     *
      * @return Address
      */
     public function setQuarter($quarter)
@@ -91,6 +94,7 @@ class Address
 
     /**
      * @param null|Street $street
+     *
      * @return Address
      */
     public function setStreet($street)

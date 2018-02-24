@@ -1,36 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 6:42 PM
- */
 
 namespace Todstoychev\Econt\Request;
-
 
 use Todstoychev\Econt\Model\Loading;
 
 class ParcelRequest
 {
-
     /**
-     * @var boolean дали да се прави само валидация, без да се генерират товарителници
+     * @var bool дали да се прави само валидация, без да се генерират товарителници
      */
     private $validate = false;
 
     /**
-     * @var boolean прави се валидация само за ценообразуващите полета, всички останали се пропускат.
+     * @var bool прави се валидация само за ценообразуващите полета, всички останали се пропускат
      */
     private $onlyCalculate = false;
 
     /**
-     * @var boolean ако възникване на поне една грешка не се създават пратки; 1 – валидните пратки се създават, за останалите връща грешка
+     * @var bool ако възникване на поне една грешка не се създават пратки; 1 – валидните пратки се създават, за останалите връща грешка
      */
     private $processAllParcels = false;
 
     /**
-     * @var string|null ако $processAllParcels е 1 параметрите за които е върната грешка се изпращат на посочения e-mail адрес
+     * @var string|null ако е 1 параметрите за които е върната грешка се изпращат на посочения e-mail адрес
      */
     private $emailErrorsTo;
 
@@ -39,20 +31,20 @@ class ParcelRequest
      */
     private $loadings = [];
 
-
     /**
      * @return bool
      */
-    public function isValidate(): bool
+    public function isValidate()
     {
         return $this->validate;
     }
 
     /**
      * @param bool $validate
+     *
      * @return ParcelRequest
      */
-    public function setValidate(bool $validate): ParcelRequest
+    public function setValidate($validate)
     {
         $this->validate = $validate;
 
@@ -62,16 +54,17 @@ class ParcelRequest
     /**
      * @return bool
      */
-    public function isOnlyCalculate(): bool
+    public function isOnlyCalculate()
     {
         return $this->onlyCalculate;
     }
 
     /**
      * @param bool $onlyCalculate
+     *
      * @return ParcelRequest
      */
-    public function setOnlyCalculate(bool $onlyCalculate): ParcelRequest
+    public function setOnlyCalculate($onlyCalculate)
     {
         $this->onlyCalculate = $onlyCalculate;
 
@@ -81,16 +74,17 @@ class ParcelRequest
     /**
      * @return bool
      */
-    public function isProcessAllParcels(): bool
+    public function isProcessAllParcels()
     {
         return $this->processAllParcels;
     }
 
     /**
      * @param bool $processAllParcels
+     *
      * @return ParcelRequest
      */
-    public function setProcessAllParcels(bool $processAllParcels): ParcelRequest
+    public function setProcessAllParcels($processAllParcels)
     {
         $this->processAllParcels = $processAllParcels;
 
@@ -107,9 +101,10 @@ class ParcelRequest
 
     /**
      * @param null|string $emailErrorsTo
+     *
      * @return ParcelRequest
      */
-    public function setEmailErrorsTo($emailErrorsTo): ParcelRequest
+    public function setEmailErrorsTo($emailErrorsTo)
     {
         $this->emailErrorsTo = $emailErrorsTo;
 
@@ -119,32 +114,20 @@ class ParcelRequest
     /**
      * @return Loading[]
      */
-    public function getLoadings(): array
+    public function getLoadings()
     {
         return $this->loadings;
     }
 
     /**
-     * @param Loading $loading
-     * @return ParcelRequest
-     */
-    public function addLoading(Loading $loading): ParcelRequest
-    {
-        $this->loadings[] = $loading;
-
-        return $this;
-    }
-
-    /**
      * @param Loading[] $loadings
+     *
      * @return ParcelRequest
      */
-    public function setLoadings(array $loadings): ParcelRequest
+    public function setLoadings($loadings)
     {
         $this->loadings = $loadings;
 
         return $this;
     }
-
-
 }

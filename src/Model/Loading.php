@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: bozhidar.hristov
  * Date: 6/9/17
- * Time: 7:28 PM
+ * Time: 7:28 PM.
  */
 
 namespace Todstoychev\Econt\Model;
-
 
 class Loading
 {
@@ -36,6 +35,7 @@ class Loading
 
     /**
      * @param Sender $sender
+     *
      * @return Loading
      */
     public function setSender($sender)
@@ -55,6 +55,7 @@ class Loading
 
     /**
      * @param Receiver $receiver
+     *
      * @return Loading
      */
     public function setReceiver($receiver)
@@ -74,6 +75,7 @@ class Loading
 
     /**
      * @param Shipment $shipment
+     *
      * @return Loading
      */
     public function setShipment($shipment)

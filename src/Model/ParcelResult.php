@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: bozhidar.hristov
  * Date: 6/12/17
- * Time: 2:30 PM
+ * Time: 2:30 PM.
  */
 
 namespace Todstoychev\Econt\Model;
-
 
 class ParcelResult
 {
@@ -76,6 +75,7 @@ class ParcelResult
 
     /**
      * @param null|string $loadingId
+     *
      * @return ParcelResult
      */
     public function setLoadingId($loadingId)
@@ -95,6 +95,7 @@ class ParcelResult
 
     /**
      * @param null|string $loadingNumber
+     *
      * @return ParcelResult
      */
     public function setLoadingNumber($loadingNumber)
@@ -114,6 +115,7 @@ class ParcelResult
 
     /**
      * @param null|string $courierRequestId
+     *
      * @return ParcelResult
      */
     public function setCourierRequestId($courierRequestId)
@@ -133,6 +135,7 @@ class ParcelResult
 
     /**
      * @param \DateTime $deliveryDate
+     *
      * @return ParcelResult
      */
     public function setDeliveryDate($deliveryDate)
@@ -152,6 +155,7 @@ class ParcelResult
 
     /**
      * @param LoadingPrice $loadingPrice
+     *
      * @return ParcelResult
      */
     public function setLoadingPrice($loadingPrice)
@@ -171,6 +175,7 @@ class ParcelResult
 
     /**
      * @param null|string $loadingDiscount
+     *
      * @return ParcelResult
      */
     public function setLoadingDiscount($loadingDiscount)
@@ -190,6 +195,7 @@ class ParcelResult
 
     /**
      * @param null|Error $error
+     *
      * @return ParcelResult
      */
     public function setError($error)
@@ -209,6 +215,7 @@ class ParcelResult
 
     /**
      * @param null|string $pdfUrl
+     *
      * @return ParcelResult
      */
     public function setPdfUrl($pdfUrl)
@@ -228,6 +235,7 @@ class ParcelResult
 
     /**
      * @param null|string $returnReason
+     *
      * @return ParcelResult
      */
     public function setReturnReason($returnReason)
@@ -247,6 +255,7 @@ class ParcelResult
 
     /**
      * @param null|string $previousParcelNumber
+     *
      * @return ParcelResult
      */
     public function setPreviousParcelNumber($previousParcelNumber)
@@ -266,6 +275,7 @@ class ParcelResult
 
     /**
      * @param null|string $nextParcels
+     *
      * @return ParcelResult
      */
     public function setNextParcels($nextParcels)

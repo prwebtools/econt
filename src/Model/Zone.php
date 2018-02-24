@@ -19,14 +19,13 @@ class Zone
      */
     private $nameEnglish;
 
-
     /**
-     * @var boolean
+     * @var bool
      */
     private $national;
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $isEe;
 
@@ -45,6 +44,7 @@ class Zone
 
     /**
      * @param int $id
+     *
      * @return Zone
      */
     public function setId($id)
@@ -64,6 +64,7 @@ class Zone
 
     /**
      * @param string $name
+     *
      * @return Zone
      */
     public function setName($name)
@@ -83,6 +84,7 @@ class Zone
 
     /**
      * @param string $nameEnglish
+     *
      * @return Zone
      */
     public function setNameEnglish($nameEnglish)
@@ -102,6 +104,7 @@ class Zone
 
     /**
      * @param bool $national
+     *
      * @return Zone
      */
     public function setNational($national)
@@ -121,6 +124,7 @@ class Zone
 
     /**
      * @param bool $isEe
+     *
      * @return Zone
      */
     public function setIsEe($isEe)
@@ -140,6 +144,7 @@ class Zone
 
     /**
      * @param \DateTime|null $updatedOn
+     *
      * @return Zone
      */
     public function setUpdatedOn($updatedOn)

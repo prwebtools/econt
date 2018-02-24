@@ -8,30 +8,28 @@ use Todstoychev\Econt\Response\OfficesResponse;
 
 class OfficeResponseParser implements Parser
 {
-
     public function parse(\SimpleXMLElement $xml)
     {
         $response = new OfficesResponse();
 
         foreach ($xml->offices->e as $row) {
             $office = new Office();
-            $office->setId((int)$row->id);
+            $office->setId((int) $row->id);
             $office->setName($row->name);
             $office->setNameEnglish($row->name_en);
             $office->setOfficeCode($row->office_code);
-            $office->setIsMachine((boolean)$row->is_machine);
+            $office->setIsMachine((bool) $row->is_machine);
             $office->setCountryCode($row->country_code);
-            $office->setCityId((int)$row->id_city);
+            $office->setCityId((int) $row->id_city);
             $office->setPostCode($row->post_code);
             $office->setCityName($row->city_name);
             $office->setCityNameEnglish($row->city_name_en);
             $office->setAddress($row->address);
             $office->setAddressEnglish($row->address_en);
-            $office->setQuarterId((int)$row->address_details->id_quarter);
+            $office->setQuarterId((int) $row->address_details->id_quarter);
             $office->setQuarterName($row->address_details->quarter_name);
             $office->setQuarterNameEnglish($row->address_details->quarter_name_en);
-            $office->setStreetId((int)$row->address_details->id_street);
-
+            $office->setStreetId((int) $row->address_details->id_street);
 
             $street = new Street();
             $street->setName($row->address_details->street_name);
@@ -42,7 +40,6 @@ class OfficeResponseParser implements Parser
             $street->setApartment($row->address_details->ap);
             $street->setOther($row->address_details->other);
             $office->setStreet($street);
-
 
             $office->setEmail($row->email);
             $office->setPhoneNumber($row->phone);

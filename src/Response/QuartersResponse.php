@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/12/17
- * Time: 5:26 PM
- */
 
 namespace Todstoychev\Econt\Response;
-
 
 use Todstoychev\Econt\Model\Quarter;
 
@@ -28,9 +21,10 @@ class QuartersResponse
 
     /**
      * @param Quarter $quarter
+     *
      * @return QuartersResponse
      */
-    public function addQuarter(Quarter $quarter): QuartersResponse
+    public function addQuarter(Quarter $quarter)
     {
         $this->quarters[] = $quarter;
 

@@ -44,6 +44,7 @@ class Quarter
 
     /**
      * @param int $id
+     *
      * @return Quarter
      */
     public function setId($id)
@@ -63,6 +64,7 @@ class Quarter
 
     /**
      * @param string $name
+     *
      * @return Quarter
      */
     public function setName($name)
@@ -82,6 +84,7 @@ class Quarter
 
     /**
      * @param string $nameEnglish
+     *
      * @return Quarter
      */
     public function setNameEnglish($nameEnglish)
@@ -101,6 +104,7 @@ class Quarter
 
     /**
      * @param string $cityPostCode
+     *
      * @return Quarter
      */
     public function setCityPostCode($cityPostCode)
@@ -120,6 +124,7 @@ class Quarter
 
     /**
      * @param int $cityId
+     *
      * @return Quarter
      */
     public function setCityId($cityId)
@@ -139,6 +144,7 @@ class Quarter
 
     /**
      * @param \DateTime $updatedTime
+     *
      * @return Quarter
      */
     public function setUpdatedTime($updatedTime)

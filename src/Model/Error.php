@@ -24,6 +24,7 @@ class Error
 
     /**
      * @param array $messages
+     *
      * @return Error
      */
     public function setMessages($messages)
@@ -43,6 +44,7 @@ class Error
 
     /**
      * @param string $code
+     *
      * @return Error
      */
     public function setCode($code)
