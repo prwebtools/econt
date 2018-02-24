@@ -82,18 +82,18 @@ class Receiver
     private $providerId;
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getCountryCode(): ?string
+    public function getCountryCode()
     {
         return $this->countryCode;
     }
 
     /**
-     * @param string $countryCode
+     * @param null|string $countryCode
      * @return Receiver
      */
-    public function setCountryCode(string $countryCode): Receiver
+    public function setCountryCode($countryCode)
     {
         $this->countryCode = $countryCode;
 
@@ -101,18 +101,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getCity(): ?string
+    public function getCity()
     {
         return $this->city;
     }
 
     /**
-     * @param string $city
+     * @param null|string $city
      * @return Receiver
      */
-    public function setCity(string $city): Receiver
+    public function setCity($city)
     {
         $this->city = $city;
 
@@ -120,18 +120,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getPostCode(): ?string
+    public function getPostCode()
     {
         return $this->postCode;
     }
 
     /**
-     * @param string $postCode
+     * @param null|string $postCode
      * @return Receiver
      */
-    public function setPostCode(string $postCode): Receiver
+    public function setPostCode($postCode)
     {
         $this->postCode = $postCode;
 
@@ -139,18 +139,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getAddressZip(): ?string
+    public function getAddressZip()
     {
         return $this->addressZip;
     }
 
     /**
-     * @param string $addressZip
+     * @param null|string $addressZip
      * @return Receiver
      */
-    public function setAddressZip(string $addressZip): Receiver
+    public function setAddressZip($addressZip)
     {
         $this->addressZip = $addressZip;
 
@@ -158,18 +158,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getOfficeCode(): ?string
+    public function getOfficeCode()
     {
         return $this->officeCode;
     }
 
     /**
-     * @param string $officeCode
+     * @param null|string $officeCode
      * @return Receiver
      */
-    public function setOfficeCode(string $officeCode): Receiver
+    public function setOfficeCode($officeCode)
     {
         $this->officeCode = $officeCode;
 
@@ -177,18 +177,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getName(): ?string
+    public function getName()
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param null|string $name
      * @return Receiver
      */
-    public function setName(string $name): Receiver
+    public function setName($name)
     {
         $this->name = $name;
 
@@ -196,18 +196,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getNamePerson(): ?string
+    public function getNamePerson()
     {
         return $this->namePerson;
     }
 
     /**
-     * @param string $namePerson
+     * @param null|string $namePerson
      * @return Receiver
      */
-    public function setNamePerson(string $namePerson): Receiver
+    public function setNamePerson($namePerson)
     {
         $this->namePerson = $namePerson;
 
@@ -215,18 +215,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getEmail(): ?string
+    public function getEmail()
     {
         return $this->email;
     }
 
     /**
-     * @param string $email
+     * @param null|string $email
      * @return Receiver
      */
-    public function setEmail(string $email): Receiver
+    public function setEmail($email)
     {
         $this->email = $email;
 
@@ -234,18 +234,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getQuarter(): ?string
+    public function getQuarter()
     {
         return $this->quarter;
     }
 
     /**
-     * @param string $quarter
+     * @param null|string $quarter
      * @return Receiver
      */
-    public function setQuarter(string $quarter): Receiver
+    public function setQuarter($quarter)
     {
         $this->quarter = $quarter;
 
@@ -253,18 +253,18 @@ class Receiver
     }
 
     /**
-     * @return Street|null
+     * @return null|Street
      */
-    public function getStreet(): ?Street
+    public function getStreet()
     {
         return $this->street;
     }
 
     /**
-     * @param Street $street
+     * @param null|Street $street
      * @return Receiver
      */
-    public function setStreet(Street $street): Receiver
+    public function setStreet($street)
     {
         $this->street = $street;
 
@@ -272,18 +272,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getPhoneNumber(): ?string
+    public function getPhoneNumber()
     {
         return $this->phoneNumber;
     }
 
     /**
-     * @param string $phoneNumber
+     * @param null|string $phoneNumber
      * @return Receiver
      */
-    public function setPhoneNumber(string $phoneNumber): Receiver
+    public function setPhoneNumber($phoneNumber)
     {
         $this->phoneNumber = $phoneNumber;
 
@@ -291,18 +291,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getSmsNumber(): ?string
+    public function getSmsNumber()
     {
         return $this->smsNumber;
     }
 
     /**
-     * @param string $smsNumber
+     * @param null|string $smsNumber
      * @return Receiver
      */
-    public function setSmsNumber(string $smsNumber): Receiver
+    public function setSmsNumber($smsNumber)
     {
         $this->smsNumber = $smsNumber;
 
@@ -310,18 +310,18 @@ class Receiver
     }
 
     /**
-     * @return BankDetails
+     * @return null|BankDetails
      */
-    public function getBankDetails(): ?BankDetails
+    public function getBankDetails()
     {
         return $this->bankDetails;
     }
 
     /**
-     * @param BankDetails $bankDetails
+     * @param null|BankDetails $bankDetails
      * @return Receiver
      */
-    public function setBankDetails(BankDetails $bankDetails): Receiver
+    public function setBankDetails($bankDetails)
     {
         $this->bankDetails = $bankDetails;
 
@@ -329,18 +329,18 @@ class Receiver
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getProviderId(): ?string
+    public function getProviderId()
     {
         return $this->providerId;
     }
 
     /**
-     * @param string $providerId
+     * @param null|string $providerId
      * @return Receiver
      */
-    public function setProviderId(string $providerId): Receiver
+    public function setProviderId($providerId)
     {
         $this->providerId = $providerId;
 

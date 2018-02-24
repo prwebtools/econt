@@ -38,7 +38,7 @@ class Zone
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -47,7 +47,7 @@ class Zone
      * @param int $id
      * @return Zone
      */
-    public function setId(int $id): Zone
+    public function setId($id)
     {
         $this->id = $id;
 
@@ -57,7 +57,7 @@ class Zone
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -66,7 +66,7 @@ class Zone
      * @param string $name
      * @return Zone
      */
-    public function setName(string $name): Zone
+    public function setName($name)
     {
         $this->name = $name;
 
@@ -76,7 +76,7 @@ class Zone
     /**
      * @return string
      */
-    public function getNameEnglish(): string
+    public function getNameEnglish()
     {
         return $this->nameEnglish;
     }
@@ -85,7 +85,7 @@ class Zone
      * @param string $nameEnglish
      * @return Zone
      */
-    public function setNameEnglish(string $nameEnglish): Zone
+    public function setNameEnglish($nameEnglish)
     {
         $this->nameEnglish = $nameEnglish;
 
@@ -95,7 +95,7 @@ class Zone
     /**
      * @return bool
      */
-    public function isNational(): bool
+    public function isNational()
     {
         return $this->national;
     }
@@ -104,7 +104,7 @@ class Zone
      * @param bool $national
      * @return Zone
      */
-    public function setNational(bool $national): Zone
+    public function setNational($national)
     {
         $this->national = $national;
 
@@ -114,7 +114,7 @@ class Zone
     /**
      * @return bool
      */
-    public function isEe(): bool
+    public function isEe()
     {
         return $this->isEe;
     }
@@ -123,7 +123,7 @@ class Zone
      * @param bool $isEe
      * @return Zone
      */
-    public function setIsEe(bool $isEe): Zone
+    public function setIsEe($isEe)
     {
         $this->isEe = $isEe;
 

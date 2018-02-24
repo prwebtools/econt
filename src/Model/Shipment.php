@@ -3,15 +3,13 @@
  * Created by PhpStorm.
  * User: bozhidar.hristov
  * Date: 6/9/17
- * Time: 6:29 PM
+ * Time: 6:29 PM.
  */
 
 namespace Todstoychev\Econt\Model;
 
-
 class Shipment
 {
-
     const SHIPMENT_TYPE_PACK = 'PACK';
     const SHIPMENT_TYPE_DOCUMENT = 'DOCUMENT';
     const SHIPMENT_TYPE_PALLET = 'PALLET';
@@ -24,6 +22,13 @@ class Shipment
     const SHIPMENT_TYPE_ADV = 'ADV';
     const SHIPMENT_TYPE_SECOGRAM = 'SECOGRAM';
     const SHIPMENT_TYPE_MONEY_TRANSFER = 'MONEY_TRANSFER';
+
+    const TARIFF_SUB_CODE_DOOR_DOOR = 'DOOR_DOOR';
+    const TARIFF_SUB_CODE_OFFICE_DOOR = 'OFFICE_DOOR';
+    const TARIFF_SUB_CODE_DOOR_OFFICE = 'DOOR_OFFICE';
+    const TARIFF_SUB_CODE_OFFICE_OFFICE = 'OFFICE_OFFICE';
+    const TARIFF_SUB_CODE_DOOR_BANK = 'DOOR_BANK';
+    const TARIFF_SUB_CODE_OFFICE_BANK = 'OFFICE_BANK';
 
     private static $shipmentTypes = [
         self::SHIPMENT_TYPE_PACK,
@@ -39,13 +44,6 @@ class Shipment
         self::SHIPMENT_TYPE_SECOGRAM,
         self::SHIPMENT_TYPE_MONEY_TRANSFER,
     ];
-
-    const TARIFF_SUB_CODE_DOOR_DOOR = 'DOOR_DOOR';
-    const TARIFF_SUB_CODE_OFFICE_DOOR = 'OFFICE_DOOR';
-    const TARIFF_SUB_CODE_DOOR_OFFICE = 'DOOR_OFFICE';
-    const TARIFF_SUB_CODE_OFFICE_OFFICE = 'OFFICE_OFFICE';
-    const TARIFF_SUB_CODE_DOOR_BANK = 'DOOR_BANK';
-    const TARIFF_SUB_CODE_OFFICE_BANK = 'OFFICE_BANK';
 
     private static $tariffSubCodes = [
         self::TARIFF_SUB_CODE_DOOR_DOOR,
@@ -92,17 +90,17 @@ class Shipment
     private $tariffSubCode;
 
     /**
-     * @var boolean разрешава се преглед на пратката преди събиране на наложения платеж
+     * @var bool разрешава се преглед на пратката преди събиране на наложения платеж
      */
     private $payAfterAccept = false;
 
     /**
-     * @var boolean пратката да се прегледа от получателя и да плати наложения платеж само ако приеме стоката ми.
+     * @var bool пратката да се прегледа от получателя и да плати наложения платеж само ако приеме стоката ми
      */
     private $invoiceBeforePayCashOnDelivery = false;
 
     /**
-     * @var boolean - пратката да се прегледа и тества от получателя и да плати наложения платеж само ако приеме стоката ми.
+     * @var bool - пратката да се прегледа и тества от получателя и да плати наложения платеж само ако приеме стоката ми
      */
     private $payAfterTest = false;
 
@@ -117,7 +115,7 @@ class Shipment
     private $deliveryDate;
 
     /**
-     * @var boolean дали пратката е с размери под 60 см
+     * @var bool дали пратката е с размери под 60 см
      */
     private $sizeUnder60cm = true;
 
@@ -136,6 +134,7 @@ class Shipment
 
     /**
      * @param null|string $loadingNumber
+     *
      * @return Shipment
      */
     public function setLoadingNumber($loadingNumber)
@@ -155,6 +154,7 @@ class Shipment
 
     /**
      * @param null|string $envelopeNumber
+     *
      * @return Shipment
      */
     public function setEnvelopeNumber($envelopeNumber)
@@ -167,17 +167,19 @@ class Shipment
     /**
      * @return string
      */
-    public function getShipmentType(): string
+    public function getShipmentType()
     {
         return $this->shipmentType;
     }
 
     /**
      * @param string $shipmentType
+     *
      * @return Shipment
+     *
      * @throws \InvalidArgumentException
      */
-    public function setShipmentType(string $shipmentType): Shipment
+    public function setShipmentType($shipmentType)
     {
         if (!in_array($shipmentType, self::$shipmentTypes)) {
             throw new \InvalidArgumentException(sprintf('%s is not allowed value for %s', $shipmentType, __METHOD__));
@@ -197,6 +199,7 @@ class Shipment
 
     /**
      * @param null|string $description
+     *
      * @return Shipment
      */
     public function setDescription($description)
@@ -209,16 +212,17 @@ class Shipment
     /**
      * @return int
      */
-    public function getPackCount(): int
+    public function getPackCount()
     {
         return $this->packCount;
     }
 
     /**
      * @param int $packCount
+     *
      * @return Shipment
      */
-    public function setPackCount(int $packCount): Shipment
+    public function setPackCount($packCount)
     {
         $this->packCount = $packCount;
 
@@ -228,16 +232,17 @@ class Shipment
     /**
      * @return string
      */
-    public function getWeight(): string
+    public function getWeight()
     {
         return $this->weight;
     }
 
     /**
      * @param string $weight
+     *
      * @return Shipment
      */
-    public function setWeight(string $weight): Shipment
+    public function setWeight($weight)
     {
         $this->weight = $weight;
 
@@ -247,17 +252,19 @@ class Shipment
     /**
      * @return string
      */
-    public function getTariffSubCode(): string
+    public function getTariffSubCode()
     {
         return $this->tariffSubCode;
     }
 
     /**
      * @param string $tariffSubCode
+     *
      * @return Shipment
+     *
      * @throws \InvalidArgumentException
      */
-    public function setTariffSubCode(string $tariffSubCode): Shipment
+    public function setTariffSubCode($tariffSubCode)
     {
         if (!in_array($tariffSubCode, self::$tariffSubCodes)) {
             throw new \InvalidArgumentException(sprintf('%s is not allowed value for %s', $tariffSubCode, __METHOD__));
@@ -270,16 +277,17 @@ class Shipment
     /**
      * @return bool
      */
-    public function isPayAfterAccept(): bool
+    public function isPayAfterAccept()
     {
         return $this->payAfterAccept;
     }
 
     /**
      * @param bool $payAfterAccept
+     *
      * @return Shipment
      */
-    public function setPayAfterAccept(bool $payAfterAccept): Shipment
+    public function setPayAfterAccept($payAfterAccept)
     {
         $this->payAfterAccept = $payAfterAccept;
 
@@ -289,16 +297,17 @@ class Shipment
     /**
      * @return bool
      */
-    public function isInvoiceBeforePayCashOnDelivery(): bool
+    public function isInvoiceBeforePayCashOnDelivery()
     {
         return $this->invoiceBeforePayCashOnDelivery;
     }
 
     /**
      * @param bool $invoiceBeforePayCashOnDelivery
+     *
      * @return Shipment
      */
-    public function setInvoiceBeforePayCashOnDelivery(bool $invoiceBeforePayCashOnDelivery): Shipment
+    public function setInvoiceBeforePayCashOnDelivery($invoiceBeforePayCashOnDelivery)
     {
         $this->invoiceBeforePayCashOnDelivery = $invoiceBeforePayCashOnDelivery;
 
@@ -308,16 +317,17 @@ class Shipment
     /**
      * @return bool
      */
-    public function isPayAfterTest(): bool
+    public function isPayAfterTest()
     {
         return $this->payAfterTest;
     }
 
     /**
      * @param bool $payAfterTest
+     *
      * @return Shipment
      */
-    public function setPayAfterTest(bool $payAfterTest): Shipment
+    public function setPayAfterTest($payAfterTest)
     {
         $this->payAfterTest = $payAfterTest;
 
@@ -327,13 +337,14 @@ class Shipment
     /**
      * @return \DateTime|null
      */
-    public function getSendDate(): ?\DateTime
+    public function getSendDate()
     {
         return $this->sendDate;
     }
 
     /**
      * @param \DateTime|null $sendDate
+     *
      * @return Shipment
      */
     public function setSendDate(\DateTime $sendDate)
@@ -346,16 +357,17 @@ class Shipment
     /**
      * @return null|string
      */
-    public function getDeliveryDate(): ?string
+    public function getDeliveryDate()
     {
         return $this->deliveryDate;
     }
 
     /**
      * @param null|string $deliveryDate
+     *
      * @return Shipment
      */
-    public function setDeliveryDate(string $deliveryDate)
+    public function setDeliveryDate($deliveryDate)
     {
         $this->deliveryDate = $deliveryDate;
 
@@ -365,16 +377,17 @@ class Shipment
     /**
      * @return bool
      */
-    public function isSizeUnder60cm(): bool
+    public function isSizeUnder60cm()
     {
         return $this->sizeUnder60cm;
     }
 
     /**
      * @param bool $sizeUnder60cm
+     *
      * @return Shipment
      */
-    public function setSizeUnder60cm(bool $sizeUnder60cm): Shipment
+    public function setSizeUnder60cm($sizeUnder60cm)
     {
         $this->sizeUnder60cm = $sizeUnder60cm;
 
@@ -391,6 +404,7 @@ class Shipment
 
     /**
      * @param null|string $orderNumber
+     *
      * @return Shipment
      */
     public function setOrderNumber($orderNumber)

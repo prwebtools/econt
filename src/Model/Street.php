@@ -47,18 +47,18 @@ class Street
     private $other;
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getName(): ?string
+    public function getName()
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param null|string $name
      * @return Street
      */
-    public function setName(string $name): Street
+    public function setName($name)
     {
         $this->name = $name;
 
@@ -66,18 +66,18 @@ class Street
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getNumber(): ?string
+    public function getNumber()
     {
         return $this->number;
     }
 
     /**
-     * @param string $number
+     * @param null|string $number
      * @return Street
      */
-    public function setNumber(string $number): Street
+    public function setNumber($number)
     {
         $this->number = $number;
 
@@ -85,18 +85,18 @@ class Street
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getBlock(): ?string
+    public function getBlock()
     {
         return $this->block;
     }
 
     /**
-     * @param string $block
+     * @param null|string $block
      * @return Street
      */
-    public function setBlock(string $block): Street
+    public function setBlock($block)
     {
         $this->block = $block;
 
@@ -104,18 +104,18 @@ class Street
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getEntrance(): ?string
+    public function getEntrance()
     {
         return $this->entrance;
     }
 
     /**
-     * @param string $entrance
+     * @param null|string $entrance
      * @return Street
      */
-    public function setEntrance(string $entrance): Street
+    public function setEntrance($entrance)
     {
         $this->entrance = $entrance;
 
@@ -123,18 +123,37 @@ class Street
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getApartment(): ?string
+    public function getFloor()
+    {
+        return $this->floor;
+    }
+
+    /**
+     * @param null|string $floor
+     * @return Street
+     */
+    public function setFloor($floor)
+    {
+        $this->floor = $floor;
+
+        return $this;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getApartment()
     {
         return $this->apartment;
     }
 
     /**
-     * @param string $apartment
+     * @param null|string $apartment
      * @return Street
      */
-    public function setApartment(string $apartment): Street
+    public function setApartment($apartment)
     {
         $this->apartment = $apartment;
 
@@ -142,39 +161,20 @@ class Street
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getOther(): ?string
+    public function getOther()
     {
         return $this->other;
     }
 
     /**
-     * @param string $other
+     * @param null|string $other
      * @return Street
      */
-    public function setOther(string $other): Street
+    public function setOther($other)
     {
         $this->other = $other;
-
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getFloor(): ?string
-    {
-        return $this->floor;
-    }
-
-    /**
-     * @param string $floor
-     * @return Street
-     */
-    public function setFloor(string $floor): Street
-    {
-        $this->floor = $floor;
 
         return $this;
     }

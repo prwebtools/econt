@@ -1,17 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/12/17
- * Time: 5:20 PM
- */
 
 namespace Todstoychev\Econt\Model;
 
-
 class Quarter
 {
-
     /**
      * @var int
      */
@@ -45,7 +37,7 @@ class Quarter
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -54,7 +46,7 @@ class Quarter
      * @param int $id
      * @return Quarter
      */
-    public function setId(int $id): Quarter
+    public function setId($id)
     {
         $this->id = $id;
 
@@ -64,7 +56,7 @@ class Quarter
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -73,7 +65,7 @@ class Quarter
      * @param string $name
      * @return Quarter
      */
-    public function setName(string $name): Quarter
+    public function setName($name)
     {
         $this->name = $name;
 
@@ -83,7 +75,7 @@ class Quarter
     /**
      * @return string
      */
-    public function getNameEnglish(): string
+    public function getNameEnglish()
     {
         return $this->nameEnglish;
     }
@@ -92,7 +84,7 @@ class Quarter
      * @param string $nameEnglish
      * @return Quarter
      */
-    public function setNameEnglish(string $nameEnglish): Quarter
+    public function setNameEnglish($nameEnglish)
     {
         $this->nameEnglish = $nameEnglish;
 
@@ -102,7 +94,7 @@ class Quarter
     /**
      * @return string
      */
-    public function getCityPostCode(): string
+    public function getCityPostCode()
     {
         return $this->cityPostCode;
     }
@@ -111,7 +103,7 @@ class Quarter
      * @param string $cityPostCode
      * @return Quarter
      */
-    public function setCityPostCode(string $cityPostCode): Quarter
+    public function setCityPostCode($cityPostCode)
     {
         $this->cityPostCode = $cityPostCode;
 
@@ -121,7 +113,7 @@ class Quarter
     /**
      * @return int
      */
-    public function getCityId(): int
+    public function getCityId()
     {
         return $this->cityId;
     }
@@ -130,7 +122,7 @@ class Quarter
      * @param int $cityId
      * @return Quarter
      */
-    public function setCityId(int $cityId): Quarter
+    public function setCityId($cityId)
     {
         $this->cityId = $cityId;
 
@@ -140,7 +132,7 @@ class Quarter
     /**
      * @return \DateTime
      */
-    public function getUpdatedTime(): \DateTime
+    public function getUpdatedTime()
     {
         return $this->updatedTime;
     }
@@ -149,7 +141,7 @@ class Quarter
      * @param \DateTime $updatedTime
      * @return Quarter
      */
-    public function setUpdatedTime(\DateTime $updatedTime): Quarter
+    public function setUpdatedTime($updatedTime)
     {
         $this->updatedTime = $updatedTime;
 

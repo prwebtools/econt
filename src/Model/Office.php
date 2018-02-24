@@ -154,7 +154,7 @@ class Office
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -163,7 +163,7 @@ class Office
      * @param int $id
      * @return Office
      */
-    public function setId(int $id): Office
+    public function setId($id)
     {
         $this->id = $id;
 
@@ -173,7 +173,7 @@ class Office
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -182,7 +182,7 @@ class Office
      * @param string $name
      * @return Office
      */
-    public function setName(string $name): Office
+    public function setName($name)
     {
         $this->name = $name;
 
@@ -192,7 +192,7 @@ class Office
     /**
      * @return string
      */
-    public function getNameEnglish(): string
+    public function getNameEnglish()
     {
         return $this->nameEnglish;
     }
@@ -201,7 +201,7 @@ class Office
      * @param string $nameEnglish
      * @return Office
      */
-    public function setNameEnglish(string $nameEnglish): Office
+    public function setNameEnglish($nameEnglish)
     {
         $this->nameEnglish = $nameEnglish;
 
@@ -211,7 +211,7 @@ class Office
     /**
      * @return string
      */
-    public function getOfficeCode(): string
+    public function getOfficeCode()
     {
         return $this->officeCode;
     }
@@ -220,7 +220,7 @@ class Office
      * @param string $officeCode
      * @return Office
      */
-    public function setOfficeCode(string $officeCode): Office
+    public function setOfficeCode($officeCode)
     {
         $this->officeCode = $officeCode;
 
@@ -230,7 +230,7 @@ class Office
     /**
      * @return bool
      */
-    public function isMachine(): bool
+    public function isMachine()
     {
         return $this->isMachine;
     }
@@ -239,7 +239,7 @@ class Office
      * @param bool $isMachine
      * @return Office
      */
-    public function setIsMachine(bool $isMachine): Office
+    public function setIsMachine($isMachine)
     {
         $this->isMachine = $isMachine;
 
@@ -249,7 +249,7 @@ class Office
     /**
      * @return string
      */
-    public function getCountryCode(): string
+    public function getCountryCode()
     {
         return $this->countryCode;
     }
@@ -258,7 +258,7 @@ class Office
      * @param string $countryCode
      * @return Office
      */
-    public function setCountryCode(string $countryCode): Office
+    public function setCountryCode($countryCode)
     {
         $this->countryCode = $countryCode;
 
@@ -268,7 +268,7 @@ class Office
     /**
      * @return int
      */
-    public function getCityId(): int
+    public function getCityId()
     {
         return $this->cityId;
     }
@@ -277,7 +277,7 @@ class Office
      * @param int $cityId
      * @return Office
      */
-    public function setCityId(int $cityId): Office
+    public function setCityId($cityId)
     {
         $this->cityId = $cityId;
 
@@ -287,7 +287,7 @@ class Office
     /**
      * @return string
      */
-    public function getPostCode(): string
+    public function getPostCode()
     {
         return $this->postCode;
     }
@@ -296,7 +296,7 @@ class Office
      * @param string $postCode
      * @return Office
      */
-    public function setPostCode(string $postCode): Office
+    public function setPostCode($postCode)
     {
         $this->postCode = $postCode;
 
@@ -306,7 +306,7 @@ class Office
     /**
      * @return string
      */
-    public function getCityName(): string
+    public function getCityName()
     {
         return $this->cityName;
     }
@@ -315,7 +315,7 @@ class Office
      * @param string $cityName
      * @return Office
      */
-    public function setCityName(string $cityName): Office
+    public function setCityName($cityName)
     {
         $this->cityName = $cityName;
 
@@ -325,7 +325,7 @@ class Office
     /**
      * @return string
      */
-    public function getCityNameEnglish(): string
+    public function getCityNameEnglish()
     {
         return $this->cityNameEnglish;
     }
@@ -334,7 +334,7 @@ class Office
      * @param string $cityNameEnglish
      * @return Office
      */
-    public function setCityNameEnglish(string $cityNameEnglish): Office
+    public function setCityNameEnglish($cityNameEnglish)
     {
         $this->cityNameEnglish = $cityNameEnglish;
 
@@ -344,7 +344,7 @@ class Office
     /**
      * @return string
      */
-    public function getAddress(): string
+    public function getAddress()
     {
         return $this->address;
     }
@@ -353,7 +353,7 @@ class Office
      * @param string $address
      * @return Office
      */
-    public function setAddress(string $address): Office
+    public function setAddress($address)
     {
         $this->address = $address;
 
@@ -363,7 +363,7 @@ class Office
     /**
      * @return string
      */
-    public function getAddressEnglish(): string
+    public function getAddressEnglish()
     {
         return $this->addressEnglish;
     }
@@ -372,7 +372,7 @@ class Office
      * @param string $addressEnglish
      * @return Office
      */
-    public function setAddressEnglish(string $addressEnglish): Office
+    public function setAddressEnglish($addressEnglish)
     {
         $this->addressEnglish = $addressEnglish;
 
@@ -382,7 +382,7 @@ class Office
     /**
      * @return int
      */
-    public function getQuarterId(): int
+    public function getQuarterId()
     {
         return $this->quarterId;
     }
@@ -391,7 +391,7 @@ class Office
      * @param int $quarterId
      * @return Office
      */
-    public function setQuarterId(int $quarterId): Office
+    public function setQuarterId($quarterId)
     {
         $this->quarterId = $quarterId;
 
@@ -401,7 +401,7 @@ class Office
     /**
      * @return string
      */
-    public function getQuarterName(): string
+    public function getQuarterName()
     {
         return $this->quarterName;
     }
@@ -410,7 +410,7 @@ class Office
      * @param string $quarterName
      * @return Office
      */
-    public function setQuarterName(string $quarterName): Office
+    public function setQuarterName($quarterName)
     {
         $this->quarterName = $quarterName;
 
@@ -420,7 +420,7 @@ class Office
     /**
      * @return string
      */
-    public function getQuarterNameEnglish(): string
+    public function getQuarterNameEnglish()
     {
         return $this->quarterNameEnglish;
     }
@@ -429,7 +429,7 @@ class Office
      * @param string $quarterNameEnglish
      * @return Office
      */
-    public function setQuarterNameEnglish(string $quarterNameEnglish): Office
+    public function setQuarterNameEnglish($quarterNameEnglish)
     {
         $this->quarterNameEnglish = $quarterNameEnglish;
 
@@ -439,7 +439,7 @@ class Office
     /**
      * @return int
      */
-    public function getStreetId(): int
+    public function getStreetId()
     {
         return $this->streetId;
     }
@@ -448,7 +448,7 @@ class Office
      * @param int $streetId
      * @return Office
      */
-    public function setStreetId(int $streetId): Office
+    public function setStreetId($streetId)
     {
         $this->streetId = $streetId;
 
@@ -458,7 +458,7 @@ class Office
     /**
      * @return Street
      */
-    public function getStreet(): Street
+    public function getStreet()
     {
         return $this->street;
     }
@@ -467,7 +467,7 @@ class Office
      * @param Street $street
      * @return Office
      */
-    public function setStreet(Street $street): Office
+    public function setStreet($street)
     {
         $this->street = $street;
 
@@ -477,7 +477,7 @@ class Office
     /**
      * @return string
      */
-    public function getPhoneNumber(): string
+    public function getPhoneNumber()
     {
         return $this->phoneNumber;
     }
@@ -486,7 +486,7 @@ class Office
      * @param string $phoneNumber
      * @return Office
      */
-    public function setPhoneNumber(string $phoneNumber): Office
+    public function setPhoneNumber($phoneNumber)
     {
         $this->phoneNumber = $phoneNumber;
 
@@ -494,9 +494,28 @@ class Office
     }
 
     /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     * @return Office
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
      * @return \DateTime
      */
-    public function getWorkBegin(): \DateTime
+    public function getWorkBegin()
     {
         return $this->workBegin;
     }
@@ -505,7 +524,7 @@ class Office
      * @param \DateTime $workBegin
      * @return Office
      */
-    public function setWorkBegin(\DateTime $workBegin): Office
+    public function setWorkBegin($workBegin)
     {
         $this->workBegin = $workBegin;
 
@@ -515,7 +534,7 @@ class Office
     /**
      * @return \DateTime
      */
-    public function getWorkEnd(): \DateTime
+    public function getWorkEnd()
     {
         return $this->workEnd;
     }
@@ -524,7 +543,7 @@ class Office
      * @param \DateTime $workEnd
      * @return Office
      */
-    public function setWorkEnd(\DateTime $workEnd): Office
+    public function setWorkEnd($workEnd)
     {
         $this->workEnd = $workEnd;
 
@@ -534,7 +553,7 @@ class Office
     /**
      * @return \DateTime
      */
-    public function getWorkBeginSaturday(): \DateTime
+    public function getWorkBeginSaturday()
     {
         return $this->workBeginSaturday;
     }
@@ -543,7 +562,7 @@ class Office
      * @param \DateTime $workBeginSaturday
      * @return Office
      */
-    public function setWorkBeginSaturday(\DateTime $workBeginSaturday): Office
+    public function setWorkBeginSaturday($workBeginSaturday)
     {
         $this->workBeginSaturday = $workBeginSaturday;
 
@@ -553,7 +572,7 @@ class Office
     /**
      * @return \DateTime
      */
-    public function getWorkEndSaturday(): \DateTime
+    public function getWorkEndSaturday()
     {
         return $this->workEndSaturday;
     }
@@ -562,7 +581,7 @@ class Office
      * @param \DateTime $workEndSaturday
      * @return Office
      */
-    public function setWorkEndSaturday(\DateTime $workEndSaturday): Office
+    public function setWorkEndSaturday($workEndSaturday)
     {
         $this->workEndSaturday = $workEndSaturday;
 
@@ -572,7 +591,7 @@ class Office
     /**
      * @return \DateTime
      */
-    public function getTimePriority(): \DateTime
+    public function getTimePriority()
     {
         return $this->timePriority;
     }
@@ -581,7 +600,7 @@ class Office
      * @param \DateTime $timePriority
      * @return Office
      */
-    public function setTimePriority(\DateTime $timePriority): Office
+    public function setTimePriority($timePriority)
     {
         $this->timePriority = $timePriority;
 
@@ -591,7 +610,7 @@ class Office
     /**
      * @return \DateTime
      */
-    public function getUpdatedOn(): \DateTime
+    public function getUpdatedOn()
     {
         return $this->updatedOn;
     }
@@ -600,7 +619,7 @@ class Office
      * @param \DateTime $updatedOn
      * @return Office
      */
-    public function setUpdatedOn(\DateTime $updatedOn): Office
+    public function setUpdatedOn($updatedOn)
     {
         $this->updatedOn = $updatedOn;
 
@@ -610,7 +629,7 @@ class Office
     /**
      * @return string
      */
-    public function getHubCode(): string
+    public function getHubCode()
     {
         return $this->hubCode;
     }
@@ -619,7 +638,7 @@ class Office
      * @param string $hubCode
      * @return Office
      */
-    public function setHubCode(string $hubCode): Office
+    public function setHubCode($hubCode)
     {
         $this->hubCode = $hubCode;
 
@@ -629,7 +648,7 @@ class Office
     /**
      * @return string
      */
-    public function getHubName(): string
+    public function getHubName()
     {
         return $this->hubName;
     }
@@ -638,7 +657,7 @@ class Office
      * @param string $hubName
      * @return Office
      */
-    public function setHubName(string $hubName): Office
+    public function setHubName($hubName)
     {
         $this->hubName = $hubName;
 
@@ -648,7 +667,7 @@ class Office
     /**
      * @return string
      */
-    public function getHubNameEnglish(): string
+    public function getHubNameEnglish()
     {
         return $this->hubNameEnglish;
     }
@@ -657,28 +676,9 @@ class Office
      * @param string $hubNameEnglish
      * @return Office
      */
-    public function setHubNameEnglish(string $hubNameEnglish): Office
+    public function setHubNameEnglish($hubNameEnglish)
     {
         $this->hubNameEnglish = $hubNameEnglish;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail(): string
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     * @return Office
-     */
-    public function setEmail(string $email): Office
-    {
-        $this->email = $email;
 
         return $this;
     }

@@ -69,7 +69,7 @@ class ParcelResult
     /**
      * @return null|string
      */
-    public function getLoadingId(): ?string
+    public function getLoadingId()
     {
         return $this->loadingId;
     }
@@ -78,7 +78,7 @@ class ParcelResult
      * @param null|string $loadingId
      * @return ParcelResult
      */
-    public function setLoadingId($loadingId): ParcelResult
+    public function setLoadingId($loadingId)
     {
         $this->loadingId = $loadingId;
 
@@ -97,7 +97,7 @@ class ParcelResult
      * @param null|string $loadingNumber
      * @return ParcelResult
      */
-    public function setLoadingNumber($loadingNumber): ParcelResult
+    public function setLoadingNumber($loadingNumber)
     {
         $this->loadingNumber = $loadingNumber;
 
@@ -107,7 +107,7 @@ class ParcelResult
     /**
      * @return null|string
      */
-    public function getCourierRequestId(): ?string
+    public function getCourierRequestId()
     {
         return $this->courierRequestId;
     }
@@ -116,7 +116,7 @@ class ParcelResult
      * @param null|string $courierRequestId
      * @return ParcelResult
      */
-    public function setCourierRequestId($courierRequestId): ParcelResult
+    public function setCourierRequestId($courierRequestId)
     {
         $this->courierRequestId = $courierRequestId;
 
@@ -124,9 +124,28 @@ class ParcelResult
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getDeliveryDate()
+    {
+        return $this->deliveryDate;
+    }
+
+    /**
+     * @param \DateTime $deliveryDate
+     * @return ParcelResult
+     */
+    public function setDeliveryDate($deliveryDate)
+    {
+        $this->deliveryDate = $deliveryDate;
+
+        return $this;
+    }
+
+    /**
      * @return LoadingPrice
      */
-    public function getLoadingPrice(): LoadingPrice
+    public function getLoadingPrice()
     {
         return $this->loadingPrice;
     }
@@ -135,7 +154,7 @@ class ParcelResult
      * @param LoadingPrice $loadingPrice
      * @return ParcelResult
      */
-    public function setLoadingPrice(LoadingPrice $loadingPrice): ParcelResult
+    public function setLoadingPrice($loadingPrice)
     {
         $this->loadingPrice = $loadingPrice;
 
@@ -145,7 +164,7 @@ class ParcelResult
     /**
      * @return null|string
      */
-    public function getLoadingDiscount(): ?string
+    public function getLoadingDiscount()
     {
         return $this->loadingDiscount;
     }
@@ -154,7 +173,7 @@ class ParcelResult
      * @param null|string $loadingDiscount
      * @return ParcelResult
      */
-    public function setLoadingDiscount($loadingDiscount): ParcelResult
+    public function setLoadingDiscount($loadingDiscount)
     {
         $this->loadingDiscount = $loadingDiscount;
 
@@ -164,7 +183,7 @@ class ParcelResult
     /**
      * @return null|Error
      */
-    public function getError(): ?Error
+    public function getError()
     {
         return $this->error;
     }
@@ -173,19 +192,11 @@ class ParcelResult
      * @param null|Error $error
      * @return ParcelResult
      */
-    public function setError($error): ParcelResult
+    public function setError($error)
     {
         $this->error = $error;
 
         return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasError(): bool
-    {
-        return $this->error !== null;
     }
 
     /**
@@ -200,7 +211,7 @@ class ParcelResult
      * @param null|string $pdfUrl
      * @return ParcelResult
      */
-    public function setPdfUrl($pdfUrl): ParcelResult
+    public function setPdfUrl($pdfUrl)
     {
         $this->pdfUrl = $pdfUrl;
 
@@ -210,7 +221,7 @@ class ParcelResult
     /**
      * @return null|string
      */
-    public function getReturnReason(): ?string
+    public function getReturnReason()
     {
         return $this->returnReason;
     }
@@ -219,7 +230,7 @@ class ParcelResult
      * @param null|string $returnReason
      * @return ParcelResult
      */
-    public function setReturnReason($returnReason): ParcelResult
+    public function setReturnReason($returnReason)
     {
         $this->returnReason = $returnReason;
 
@@ -229,7 +240,7 @@ class ParcelResult
     /**
      * @return null|string
      */
-    public function getPreviousParcelNumber(): ?string
+    public function getPreviousParcelNumber()
     {
         return $this->previousParcelNumber;
     }
@@ -238,7 +249,7 @@ class ParcelResult
      * @param null|string $previousParcelNumber
      * @return ParcelResult
      */
-    public function setPreviousParcelNumber($previousParcelNumber): ParcelResult
+    public function setPreviousParcelNumber($previousParcelNumber)
     {
         $this->previousParcelNumber = $previousParcelNumber;
 
@@ -248,7 +259,7 @@ class ParcelResult
     /**
      * @return null|string
      */
-    public function getNextParcels(): ?string
+    public function getNextParcels()
     {
         return $this->nextParcels;
     }
@@ -257,28 +268,9 @@ class ParcelResult
      * @param null|string $nextParcels
      * @return ParcelResult
      */
-    public function setNextParcels($nextParcels): ParcelResult
+    public function setNextParcels($nextParcels)
     {
         $this->nextParcels = $nextParcels;
-
-        return $this;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getDeliveryDate(): \DateTime
-    {
-        return $this->deliveryDate;
-    }
-
-    /**
-     * @param \DateTime $deliveryDate
-     * @return ParcelResult
-     */
-    public function setDeliveryDate(\DateTime $deliveryDate): ParcelResult
-    {
-        $this->deliveryDate = $deliveryDate;
 
         return $this;
     }

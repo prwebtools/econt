@@ -39,7 +39,7 @@ class LoadingPrice
     /**
      * @return string
      */
-    public function getTotal(): string
+    public function getTotal()
     {
         return $this->total;
     }
@@ -48,7 +48,7 @@ class LoadingPrice
      * @param string $total
      * @return LoadingPrice
      */
-    public function setTotal(string $total): LoadingPrice
+    public function setTotal($total)
     {
         $this->total = $total;
 
@@ -58,7 +58,7 @@ class LoadingPrice
     /**
      * @return string
      */
-    public function getSenderTotal(): string
+    public function getSenderTotal()
     {
         return $this->senderTotal;
     }
@@ -67,7 +67,7 @@ class LoadingPrice
      * @param string $senderTotal
      * @return LoadingPrice
      */
-    public function setSenderTotal(string $senderTotal): LoadingPrice
+    public function setSenderTotal($senderTotal)
     {
         $this->senderTotal = $senderTotal;
 
@@ -77,7 +77,7 @@ class LoadingPrice
     /**
      * @return string
      */
-    public function getReceiverTotal(): string
+    public function getReceiverTotal()
     {
         return $this->receiverTotal;
     }
@@ -86,7 +86,7 @@ class LoadingPrice
      * @param string $receiverTotal
      * @return LoadingPrice
      */
-    public function setReceiverTotal(string $receiverTotal): LoadingPrice
+    public function setReceiverTotal($receiverTotal)
     {
         $this->receiverTotal = $receiverTotal;
 
@@ -96,7 +96,7 @@ class LoadingPrice
     /**
      * @return string
      */
-    public function getOtherTotal(): string
+    public function getOtherTotal()
     {
         return $this->otherTotal;
     }
@@ -105,7 +105,7 @@ class LoadingPrice
      * @param string $otherTotal
      * @return LoadingPrice
      */
-    public function setOtherTotal(string $otherTotal): LoadingPrice
+    public function setOtherTotal($otherTotal)
     {
         $this->otherTotal = $otherTotal;
 
@@ -115,7 +115,7 @@ class LoadingPrice
     /**
      * @return Currency
      */
-    public function getCurrency(): Currency
+    public function getCurrency()
     {
         return $this->currency;
     }
@@ -124,7 +124,7 @@ class LoadingPrice
      * @param Currency $currency
      * @return LoadingPrice
      */
-    public function setCurrency(Currency $currency): LoadingPrice
+    public function setCurrency($currency)
     {
         $this->currency = $currency;
 

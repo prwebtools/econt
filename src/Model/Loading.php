@@ -29,7 +29,7 @@ class Loading
     /**
      * @return Sender
      */
-    public function getSender(): Sender
+    public function getSender()
     {
         return $this->sender;
     }
@@ -38,7 +38,7 @@ class Loading
      * @param Sender $sender
      * @return Loading
      */
-    public function setSender(Sender $sender): Loading
+    public function setSender($sender)
     {
         $this->sender = $sender;
 
@@ -48,7 +48,7 @@ class Loading
     /**
      * @return Receiver
      */
-    public function getReceiver(): Receiver
+    public function getReceiver()
     {
         return $this->receiver;
     }
@@ -57,7 +57,7 @@ class Loading
      * @param Receiver $receiver
      * @return Loading
      */
-    public function setReceiver(Receiver $receiver): Loading
+    public function setReceiver($receiver)
     {
         $this->receiver = $receiver;
 
@@ -67,7 +67,7 @@ class Loading
     /**
      * @return Shipment
      */
-    public function getShipment(): Shipment
+    public function getShipment()
     {
         return $this->shipment;
     }
@@ -76,7 +76,7 @@ class Loading
      * @param Shipment $shipment
      * @return Loading
      */
-    public function setShipment(Shipment $shipment): Loading
+    public function setShipment($shipment)
     {
         $this->shipment = $shipment;
 

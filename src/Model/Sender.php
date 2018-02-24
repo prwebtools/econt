@@ -67,18 +67,18 @@ class Sender
     private $emailOnDelivery = false;
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getCountryCode(): ?string
+    public function getCountryCode()
     {
         return $this->countryCode;
     }
 
     /**
-     * @param string $countryCode
+     * @param null|string $countryCode
      * @return Sender
      */
-    public function setCountryCode(string $countryCode): Sender
+    public function setCountryCode($countryCode)
     {
         $this->countryCode = $countryCode;
 
@@ -86,18 +86,18 @@ class Sender
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getCity(): ?string
+    public function getCity()
     {
         return $this->city;
     }
 
     /**
-     * @param string $city
+     * @param null|string $city
      * @return Sender
      */
-    public function setCity(string $city): Sender
+    public function setCity($city)
     {
         $this->city = $city;
 
@@ -105,18 +105,18 @@ class Sender
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getPostCode(): ?string
+    public function getPostCode()
     {
         return $this->postCode;
     }
 
     /**
-     * @param string $postCode
+     * @param null|string $postCode
      * @return Sender
      */
-    public function setPostCode(string $postCode): Sender
+    public function setPostCode($postCode)
     {
         $this->postCode = $postCode;
 
@@ -124,18 +124,18 @@ class Sender
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getOfficeCode(): ?string
+    public function getOfficeCode()
     {
         return $this->officeCode;
     }
 
     /**
-     * @param string $officeCode
+     * @param null|string $officeCode
      * @return Sender
      */
-    public function setOfficeCode(string $officeCode): Sender
+    public function setOfficeCode($officeCode)
     {
         $this->officeCode = $officeCode;
 
@@ -143,18 +143,18 @@ class Sender
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getName(): ?string
+    public function getName()
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param null|string $name
      * @return Sender
      */
-    public function setName(string $name): Sender
+    public function setName($name)
     {
         $this->name = $name;
 
@@ -162,18 +162,18 @@ class Sender
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getNamePerson(): ?string
+    public function getNamePerson()
     {
         return $this->namePerson;
     }
 
     /**
-     * @param string $namePerson
+     * @param null|string $namePerson
      * @return Sender
      */
-    public function setNamePerson(string $namePerson): Sender
+    public function setNamePerson($namePerson)
     {
         $this->namePerson = $namePerson;
 
@@ -181,18 +181,18 @@ class Sender
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getEmail(): ?string
+    public function getEmail()
     {
         return $this->email;
     }
 
     /**
-     * @param string $email
+     * @param null|string $email
      * @return Sender
      */
-    public function setEmail(string $email): Sender
+    public function setEmail($email)
     {
         $this->email = $email;
 
@@ -200,18 +200,18 @@ class Sender
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getQuarter(): ?string
+    public function getQuarter()
     {
         return $this->quarter;
     }
 
     /**
-     * @param string $quarter
+     * @param null|string $quarter
      * @return Sender
      */
-    public function setQuarter(string $quarter): Sender
+    public function setQuarter($quarter)
     {
         $this->quarter = $quarter;
 
@@ -219,18 +219,18 @@ class Sender
     }
 
     /**
-     * @return Street|null
+     * @return null|Street
      */
-    public function getStreet(): ?Street
+    public function getStreet()
     {
         return $this->street;
     }
 
     /**
-     * @param Street $street
+     * @param null|Street $street
      * @return Sender
      */
-    public function setStreet(Street $street): Sender
+    public function setStreet($street)
     {
         $this->street = $street;
 
@@ -238,18 +238,18 @@ class Sender
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function getPhoneNumber(): ?string
+    public function getPhoneNumber()
     {
         return $this->phoneNumber;
     }
 
     /**
-     * @param string $phoneNumber
+     * @param null|string $phoneNumber
      * @return Sender
      */
-    public function setPhoneNumber(string $phoneNumber): Sender
+    public function setPhoneNumber($phoneNumber)
     {
         $this->phoneNumber = $phoneNumber;
 
@@ -259,7 +259,7 @@ class Sender
     /**
      * @return bool
      */
-    public function isEmailOnDelivery(): bool
+    public function isEmailOnDelivery()
     {
         return $this->emailOnDelivery;
     }
@@ -268,7 +268,7 @@ class Sender
      * @param bool $emailOnDelivery
      * @return Sender
      */
-    public function setEmailOnDelivery(bool $emailOnDelivery): Sender
+    public function setEmailOnDelivery($emailOnDelivery)
     {
         $this->emailOnDelivery = $emailOnDelivery;
 
