@@ -130,4 +130,14 @@ class ParcelRequest
 
         return $this;
     }
+
+    /**
+     * @param Loading $loading
+     * @return ParcelRequest
+     */
+    public function addLoading(Loading $loading)
+    {
+        $this->loadings[] = $loading;
+        return $this;
+    }
 }

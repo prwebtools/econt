@@ -284,4 +284,12 @@ class ParcelResult
 
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function hasError()
+    {
+        return $this->error !== null;
+    }
 }
