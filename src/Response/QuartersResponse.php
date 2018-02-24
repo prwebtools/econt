@@ -6,10 +6,10 @@
  * Time: 5:26 PM
  */
 
-namespace VM5\Econt\Response;
+namespace Todstoychev\Econt\Response;
 
 
-use VM5\Econt\Model\Quarter;
+use Todstoychev\Econt\Model\Quarter;
 
 class QuartersResponse
 {

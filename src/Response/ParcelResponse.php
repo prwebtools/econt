@@ -6,10 +6,10 @@
  * Time: 7:24 PM
  */
 
-namespace VM5\Econt\Response;
+namespace Todstoychev\Econt\Response;
 
 
-use VM5\Econt\Model\ParcelResult;
+use Todstoychev\Econt\Model\ParcelResult;
 
 class ParcelResponse
 {

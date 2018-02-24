@@ -1,11 +1,11 @@
 <?php
 
-namespace VM5\Econt\RequestBuilder;
+namespace Todstoychev\Econt\RequestBuilder;
 
-use VM5\Econt\Model\Receiver;
-use VM5\Econt\Model\Sender;
-use VM5\Econt\Model\Shipment;
-use VM5\Econt\Request\ParcelRequest;
+use Todstoychev\Econt\Model\Receiver;
+use Todstoychev\Econt\Model\Sender;
+use Todstoychev\Econt\Model\Shipment;
+use Todstoychev\Econt\Request\ParcelRequest;
 
 class ParcelRequestBuilder extends AbstractRequestBuilder
 {

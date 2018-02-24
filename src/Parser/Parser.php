@@ -6,7 +6,7 @@
  * Time: 4:02 PM
  */
 
-namespace VM5\Econt\Parser;
+namespace Todstoychev\Econt\Parser;
 
 
 interface Parser

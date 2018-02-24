@@ -1,8 +1,8 @@
 <?php
 
-namespace VM5\Econt\Response;
+namespace Todstoychev\Econt\Response;
 
-use VM5\Econt\Model\Zone;
+use Todstoychev\Econt\Model\Zone;
 
 class ZonesResponse
 {

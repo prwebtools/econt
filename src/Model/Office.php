@@ -6,7 +6,7 @@
  * Time: 3:54 PM
  */
 
-namespace VM5\Econt\Model;
+namespace Todstoychev\Econt\Model;
 
 
 class Office

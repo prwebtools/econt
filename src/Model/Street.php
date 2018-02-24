@@ -6,7 +6,7 @@
  * Time: 6:21 PM
  */
 
-namespace VM5\Econt\Model;
+namespace Todstoychev\Econt\Model;
 
 
 class Street

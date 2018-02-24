@@ -6,10 +6,10 @@
  * Time: 6:42 PM
  */
 
-namespace VM5\Econt\Request;
+namespace Todstoychev\Econt\Request;
 
 
-use VM5\Econt\Model\Loading;
+use Todstoychev\Econt\Model\Loading;
 
 class ParcelRequest
 {

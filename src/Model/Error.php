@@ -1,7 +1,6 @@
 <?php
 
-namespace VM5\Econt\Model;
-
+namespace Todstoychev\Econt\Model;
 
 class Error
 {
@@ -18,7 +17,7 @@ class Error
     /**
      * @return array
      */
-    public function getMessages(): array
+    public function getMessages()
     {
         return $this->messages;
     }
@@ -27,7 +26,7 @@ class Error
      * @param array $messages
      * @return Error
      */
-    public function setMessages(array $messages): Error
+    public function setMessages($messages)
     {
         $this->messages = $messages;
 
@@ -37,7 +36,7 @@ class Error
     /**
      * @return string
      */
-    public function getCode(): string
+    public function getCode()
     {
         return $this->code;
     }
@@ -46,7 +45,7 @@ class Error
      * @param string $code
      * @return Error
      */
-    public function setCode(string $code): Error
+    public function setCode($code)
     {
         $this->code = $code;
 

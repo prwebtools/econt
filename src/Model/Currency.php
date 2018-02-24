@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 7:55 PM
- */
 
-namespace VM5\Econt\Model;
-
+namespace Todstoychev\Econt\Model;
 
 class Currency
 {
@@ -24,16 +17,17 @@ class Currency
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
 
     /**
      * @param string $name
+     *
      * @return Currency
      */
-    public function setName(string $name): Currency
+    public function setName($name)
     {
         $this->name = $name;
 
@@ -43,21 +37,20 @@ class Currency
     /**
      * @return string
      */
-    public function getCode(): string
+    public function getCode()
     {
         return $this->code;
     }
 
     /**
      * @param string $code
+     *
      * @return Currency
      */
-    public function setCode(string $code): Currency
+    public function setCode($code)
     {
         $this->code = $code;
 
         return $this;
     }
-
-
 }

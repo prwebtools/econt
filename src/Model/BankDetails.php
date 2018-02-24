@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 6:27 PM
- */
 
-namespace VM5\Econt\Model;
-
+namespace Todstoychev\Econt\Model;
 
 class BankDetails
 {
@@ -24,16 +17,17 @@ class BankDetails
     /**
      * @return string
      */
-    public function getBic(): string
+    public function getBic()
     {
         return $this->bic;
     }
 
     /**
      * @param string $bic
+     *
      * @return BankDetails
      */
-    public function setBic(string $bic): BankDetails
+    public function setBic($bic)
     {
         $this->bic = $bic;
 
@@ -43,21 +37,20 @@ class BankDetails
     /**
      * @return string
      */
-    public function getIban(): string
+    public function getIban()
     {
         return $this->iban;
     }
 
     /**
      * @param string $iban
+     *
      * @return BankDetails
      */
-    public function setIban(string $iban): BankDetails
+    public function setIban($iban)
     {
         $this->iban = $iban;
 
         return $this;
     }
-
-
 }

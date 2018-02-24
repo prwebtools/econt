@@ -1,6 +1,6 @@
 <?php
 
-namespace VM5\Econt\Model;
+namespace Todstoychev\Econt\Model;
 
 class Zone
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace VM5\Econt\Parser;
+namespace Todstoychev\Econt\Parser;
 
-use VM5\Econt\Model\Office;
-use VM5\Econt\Model\Street;
-use VM5\Econt\Response\OfficesResponse;
+use Todstoychev\Econt\Model\Office;
+use Todstoychev\Econt\Model\Street;
+use Todstoychev\Econt\Response\OfficesResponse;
 
 class OfficeResponseParser implements Parser
 {

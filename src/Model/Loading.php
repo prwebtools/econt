@@ -6,7 +6,7 @@
  * Time: 7:28 PM
  */
 
-namespace VM5\Econt\Model;
+namespace Todstoychev\Econt\Model;
 
 
 class Loading

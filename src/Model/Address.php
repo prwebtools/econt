@@ -1,17 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/12/17
- * Time: 5:44 PM
- */
 
-namespace VM5\Econt\Model;
-
+namespace Todstoychev\Econt\Model;
 
 class Address
 {
-
     /**
      * @var string
      */
@@ -35,7 +27,7 @@ class Address
     /**
      * @return string
      */
-    public function getCity(): string
+    public function getCity()
     {
         return $this->city;
     }
@@ -44,7 +36,7 @@ class Address
      * @param string $city
      * @return Address
      */
-    public function setCity(string $city): Address
+    public function setCity($city)
     {
         $this->city = $city;
 
@@ -54,7 +46,7 @@ class Address
     /**
      * @return string
      */
-    public function getPostCode(): string
+    public function getPostCode()
     {
         return $this->postCode;
     }
@@ -63,7 +55,7 @@ class Address
      * @param string $postCode
      * @return Address
      */
-    public function setPostCode(string $postCode): Address
+    public function setPostCode($postCode)
     {
         $this->postCode = $postCode;
 
@@ -73,7 +65,7 @@ class Address
     /**
      * @return null|string
      */
-    public function getQuarter(): ?string
+    public function getQuarter()
     {
         return $this->quarter;
     }
@@ -82,7 +74,7 @@ class Address
      * @param null|string $quarter
      * @return Address
      */
-    public function setQuarter($quarter): Address
+    public function setQuarter($quarter)
     {
         $this->quarter = $quarter;
 
@@ -92,7 +84,7 @@ class Address
     /**
      * @return null|Street
      */
-    public function getStreet(): ?Street
+    public function getStreet()
     {
         return $this->street;
     }
@@ -101,7 +93,7 @@ class Address
      * @param null|Street $street
      * @return Address
      */
-    public function setStreet($street): Address
+    public function setStreet($street)
     {
         $this->street = $street;
 

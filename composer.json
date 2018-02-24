@@ -1,21 +1,27 @@
 {
-    "name": "vm5/econt",
-    "description": "This bundle provides integration with ECONT Courier",
+    "name": "todstoychev/econt",
+    "description": "This bundle provides integration with ECONT Courier. Module is based on Bozhidar Hristov's vm/econt.",
     "type": "component",
-    "authors": [{
+    "authors": [
+        {
             "name": "Bozhidar Hristov",
             "email": "b.hristov@vm5.eu"
-        }],
+        },
+        {
+            "name": "Todor Todorov",
+            "email": "todstoychev@gmail.com"
+        }
+    ],
     "keywords": [
         "econt", "courier"
     ],
     "require": {
         "guzzlehttp/guzzle": "~6.0",
-        "php": "~7.1"
+        "php": ">=5.4"
     },
     "autoload": {
 	"psr-4": {
-            "VM5\\Econt\\": "src/"
+            "Todstoychev\\Econt\\": "src/"
         }
     }
 }

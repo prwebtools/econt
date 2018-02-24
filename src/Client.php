@@ -1,22 +1,22 @@
 <?php
 
-namespace VM5\Econt;
+namespace Todstoychev\Econt;
 
 
-use VM5\Econt\Parser\AddressValidationResponseParser;
-use VM5\Econt\Parser\OfficeResponseParser;
-use VM5\Econt\Parser\ParcelResponseParser;
-use VM5\Econt\Parser\Parser;
-use VM5\Econt\Parser\QuartersResponseParser;
-use VM5\Econt\Parser\ZonesResponseParser;
-use VM5\Econt\Request\AddressValidationRequest;
-use VM5\Econt\Request\OfficesRequest;
-use VM5\Econt\Request\ParcelRequest;
-use VM5\Econt\Request\QuartersRequest;
-use VM5\Econt\Request\ZonesRequest;
-use VM5\Econt\RequestBuilder\ParcelRequestBuilder;
-use VM5\Econt\RequestBuilder\RequestBuilder;
-use VM5\Econt\RequestBuilder\ServiceRequestBuilder;
+use Todstoychev\Econt\Parser\AddressValidationResponseParser;
+use Todstoychev\Econt\Parser\OfficeResponseParser;
+use Todstoychev\Econt\Parser\ParcelResponseParser;
+use Todstoychev\Econt\Parser\Parser;
+use Todstoychev\Econt\Parser\QuartersResponseParser;
+use Todstoychev\Econt\Parser\ZonesResponseParser;
+use Todstoychev\Econt\Request\AddressValidationRequest;
+use Todstoychev\Econt\Request\OfficesRequest;
+use Todstoychev\Econt\Request\ParcelRequest;
+use Todstoychev\Econt\Request\QuartersRequest;
+use Todstoychev\Econt\Request\ZonesRequest;
+use Todstoychev\Econt\RequestBuilder\ParcelRequestBuilder;
+use Todstoychev\Econt\RequestBuilder\RequestBuilder;
+use Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder;
 
 class Client
 {

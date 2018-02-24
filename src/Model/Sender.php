@@ -6,7 +6,7 @@
  * Time: 6:19 PM
  */
 
-namespace VM5\Econt\Model;
+namespace Todstoychev\Econt\Model;
 
 
 class Sender

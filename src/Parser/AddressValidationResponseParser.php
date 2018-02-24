@@ -1,10 +1,10 @@
 <?php
 
-namespace VM5\Econt\Parser;
+namespace Todstoychev\Econt\Parser;
 
-use VM5\Econt\Model\AddressValidation;
-use VM5\Econt\Model\Street;
-use VM5\Econt\Response\AddressValidationResponse;
+use Todstoychev\Econt\Model\AddressValidation;
+use Todstoychev\Econt\Model\Street;
+use Todstoychev\Econt\Response\AddressValidationResponse;
 
 class AddressValidationResponseParser implements Parser
 {

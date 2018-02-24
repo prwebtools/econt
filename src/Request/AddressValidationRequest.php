@@ -6,10 +6,10 @@
  * Time: 5:43 PM
  */
 
-namespace VM5\Econt\Request;
+namespace Todstoychev\Econt\Request;
 
 
-use VM5\Econt\Model\Address;
+use Todstoychev\Econt\Model\Address;
 
 class AddressValidationRequest
 {

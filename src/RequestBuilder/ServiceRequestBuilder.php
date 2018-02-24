@@ -6,13 +6,13 @@
  * Time: 6:58 PM
  */
 
-namespace VM5\Econt\RequestBuilder;
+namespace Todstoychev\Econt\RequestBuilder;
 
 
-use VM5\Econt\Request\AddressValidationRequest;
-use VM5\Econt\Request\OfficesRequest;
-use VM5\Econt\Request\QuartersRequest;
-use VM5\Econt\Request\ZonesRequest;
+use Todstoychev\Econt\Request\AddressValidationRequest;
+use Todstoychev\Econt\Request\OfficesRequest;
+use Todstoychev\Econt\Request\QuartersRequest;
+use Todstoychev\Econt\Request\ZonesRequest;
 
 class ServiceRequestBuilder extends AbstractRequestBuilder
 {

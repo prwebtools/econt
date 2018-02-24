@@ -1,17 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/12/17
- * Time: 5:52 PM
- */
 
-namespace VM5\Econt\Model;
-
+namespace Todstoychev\Econt\Model;
 
 class AddressValidation
 {
-
     const STATUS_VALID = 'normal';
     const STATUS_VALID_AFTER_PROCESS = 'processed';
     const STATUS_INVALID = 'invalid';
@@ -54,16 +46,17 @@ class AddressValidation
     /**
      * @return string
      */
-    public function getCity(): string
+    public function getCity()
     {
         return $this->city;
     }
 
     /**
      * @param string $city
+     *
      * @return AddressValidation
      */
-    public function setCity(string $city): AddressValidation
+    public function setCity($city)
     {
         $this->city = $city;
 
@@ -73,16 +66,17 @@ class AddressValidation
     /**
      * @return string
      */
-    public function getPostCode(): string
+    public function getPostCode()
     {
         return $this->postCode;
     }
 
     /**
      * @param string $postCode
+     *
      * @return AddressValidation
      */
-    public function setPostCode(string $postCode): AddressValidation
+    public function setPostCode($postCode)
     {
         $this->postCode = $postCode;
 
@@ -92,16 +86,17 @@ class AddressValidation
     /**
      * @return string
      */
-    public function getOfficeCode(): string
+    public function getOfficeCode()
     {
         return $this->officeCode;
     }
 
     /**
      * @param string $officeCode
+     *
      * @return AddressValidation
      */
-    public function setOfficeCode(string $officeCode): AddressValidation
+    public function setOfficeCode($officeCode)
     {
         $this->officeCode = $officeCode;
 
@@ -111,16 +106,17 @@ class AddressValidation
     /**
      * @return string
      */
-    public function getQuarter(): string
+    public function getQuarter()
     {
         return $this->quarter;
     }
 
     /**
      * @param string $quarter
+     *
      * @return AddressValidation
      */
-    public function setQuarter(string $quarter): AddressValidation
+    public function setQuarter($quarter)
     {
         $this->quarter = $quarter;
 
@@ -137,6 +133,7 @@ class AddressValidation
 
     /**
      * @param null|Street $street
+     *
      * @return AddressValidation
      */
     public function setStreet($street)
@@ -149,16 +146,17 @@ class AddressValidation
     /**
      * @return string
      */
-    public function getValidationStatus(): string
+    public function getValidationStatus()
     {
         return $this->validationStatus;
     }
 
     /**
      * @param string $validationStatus
+     *
      * @return AddressValidation
      */
-    public function setValidationStatus(string $validationStatus): AddressValidation
+    public function setValidationStatus($validationStatus)
     {
         $this->validationStatus = $validationStatus;
 
@@ -175,6 +173,7 @@ class AddressValidation
 
     /**
      * @param null|string $error
+     *
      * @return AddressValidation
      */
     public function setError($error)
@@ -186,16 +185,16 @@ class AddressValidation
 
     public function isValid()
     {
-        return $this->getValidationStatus() == self::STATUS_VALID;
+        return self::STATUS_VALID == $this->getValidationStatus();
     }
 
     public function isValidAfterProcessed()
     {
-        return $this->getValidationStatus() == self::STATUS_VALID_AFTER_PROCESS;
+        return self::STATUS_VALID_AFTER_PROCESS == $this->getValidationStatus();
     }
 
     public function isInvalid()
     {
-        return $this->getValidationStatus() == self::STATUS_INVALID;
+        return self::STATUS_INVALID == $this->getValidationStatus();
     }
 }

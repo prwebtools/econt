@@ -6,10 +6,10 @@
  * Time: 5:48 PM
  */
 
-namespace VM5\Econt\Response;
+namespace Todstoychev\Econt\Response;
 
 
-use VM5\Econt\Model\AddressValidation;
+use Todstoychev\Econt\Model\AddressValidation;
 
 class AddressValidationResponse
 {
