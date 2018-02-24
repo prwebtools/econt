@@ -22,7 +22,7 @@ class ParcelResponse
     /**
      * @return ParcelResult[]
      */
-    public function getParcelResults(): array
+    public function getParcelResults()
     {
         return $this->parcelResults;
     }
