@@ -8,7 +8,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class ParcelResult
+class ParcelResult extends AbstractModel
 {
     /**
      * @var string|null

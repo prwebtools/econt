@@ -2,7 +2,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class Zone
+class Zone extends AbstractModel
 {
     /**
      * @var int

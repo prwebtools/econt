@@ -2,7 +2,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class Currency
+class Currency extends AbstractModel
 {
     /**
      * @var string

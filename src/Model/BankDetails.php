@@ -2,7 +2,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class BankDetails
+class BankDetails extends AbstractModel
 {
     /**
      * @var string

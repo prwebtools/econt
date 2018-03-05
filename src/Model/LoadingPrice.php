@@ -8,7 +8,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class LoadingPrice
+class LoadingPrice extends AbstractModel
 {
     /**
      * @var string

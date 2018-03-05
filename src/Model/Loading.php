@@ -8,7 +8,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class Loading
+class Loading extends AbstractModel
 {
     /**
      * @var Sender изпращач

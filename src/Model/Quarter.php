@@ -2,7 +2,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class Quarter
+class Quarter extends AbstractModel
 {
     /**
      * @var int

@@ -8,7 +8,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class Sender
+class Sender extends AbstractModel
 {
     /**
      * @var string|null

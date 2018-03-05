@@ -10,7 +10,7 @@ namespace Todstoychev\Econt\Model;
 
 use ReflectionClass;
 
-class Office
+class Office extends AbstractModel
 {
     /**
      * @var int
@@ -722,15 +722,25 @@ class Office
         $array = [];
 
         foreach ($properties as $property) {
-            $key = $property;
+            $key = $property->getName();
 
-            if ((bool)preg_match('/^[A-Z]*$/', $property, $matches)) {
+            if ((bool)preg_match('/^[A-Z]*$/', $property->getName(), $matches)) {
                 foreach ($matches[0] as $match) {
-                    $key = str_replace($match, '_'.strtolower($match), $property);
+                    $key = str_replace($match, '_'.strtolower($match), $property->getName());
                 }
             }
 
-            $array[$key] = $this->{$property};
+            if ($property->getName() === 'street') {
+
+            }
+
+            if ($this->{$property->getName()} instanceof \SimpleXMLElement) {
+                $array[$key] = (string) $this->{$property->getName()};
+
+                continue;
+            }
+
+            $array[$key] = $this->{$property->getName()};
         }
 
         return $array;

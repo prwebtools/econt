@@ -2,7 +2,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class Error
+class Error extends AbstractModel
 {
     /**
      * @var array

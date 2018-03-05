@@ -8,7 +8,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class Shipment
+class Shipment extends AbstractModel
 {
     const SHIPMENT_TYPE_PACK = 'PACK';
     const SHIPMENT_TYPE_DOCUMENT = 'DOCUMENT';

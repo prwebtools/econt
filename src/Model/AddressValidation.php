@@ -2,7 +2,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class AddressValidation
+class AddressValidation extends AbstractModel
 {
     const STATUS_VALID = 'normal';
     const STATUS_VALID_AFTER_PROCESS = 'processed';

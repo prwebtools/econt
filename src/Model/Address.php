@@ -2,7 +2,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class Address
+class Address extends AbstractModel
 {
     /**
      * @var string

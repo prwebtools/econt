@@ -8,7 +8,7 @@
 
 namespace Todstoychev\Econt\Model;
 
-class Receiver
+class Receiver extends AbstractModel
 {
     /**
      * @var string|null

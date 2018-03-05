@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 6:21 PM.
- */
 
 namespace Todstoychev\Econt\Model;
 
-class Street
+class Street extends AbstractModel
 {
     /**
      * @var string|null
@@ -184,4 +178,6 @@ class Street
 
         return $this;
     }
+
+
 }
