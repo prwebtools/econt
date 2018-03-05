@@ -730,7 +730,7 @@ class Office
                 }
             }
 
-            $array[$key] => $this->{$property};
+            $array[$key] = $this->{$property};
         }
 
         return $array;
