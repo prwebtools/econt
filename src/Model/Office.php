@@ -8,6 +8,8 @@
 
 namespace Todstoychev\Econt\Model;
 
+use ReflectionClass;
+
 class Office
 {
     /**
@@ -708,5 +710,29 @@ class Office
         $this->hubNameEnglish = $hubNameEnglish;
 
         return $this;
+    }
+
+    /**
+     * @throws \ReflectionException
+     */
+    public function toArray()
+    {
+        $reflect = new ReflectionClass($this);
+        $properties = $reflect->getProperties();
+        $array = [];
+
+        foreach ($properties as $property) {
+            $key = $property;
+
+            if ((bool)preg_match('/^[A-Z]*$/', $property, $matches)) {
+                foreach ($matches[0] as $match) {
+                    $key = str_replace($match, '_'.strtolower($match), $property);
+                }
+            }
+
+            $array[$key] => $this->{$property};
+        }
+
+        return $array;
     }
 }
