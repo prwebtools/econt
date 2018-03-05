@@ -730,12 +730,12 @@ class Office extends AbstractModel
                 }
             }
 
-            if ($property->getName() === 'street') {
-
+            if ('street' === $property->getName()) {
+                $array['street'] = $this->getStreet()->toArray();
             }
 
             if ($this->{$property->getName()} instanceof \SimpleXMLElement) {
-                $array[$key] = (string) $this->{$property->getName()};
+                $array[$key] = (string)$this->{$property->getName()};
 
                 continue;
             }
