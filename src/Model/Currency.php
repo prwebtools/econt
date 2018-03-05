@@ -7,12 +7,12 @@ class Currency extends AbstractModel
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      */
-    private $code;
+    protected $code;
 
     /**
      * @return string

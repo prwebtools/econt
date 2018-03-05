@@ -15,142 +15,142 @@ class Office extends AbstractModel
     /**
      * @var int
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      */
-    private $nameEnglish;
+    protected $nameEnglish;
 
     /**
      * @var string
      */
-    private $officeCode;
+    protected $officeCode;
 
     /**
      * @var bool
      */
-    private $isMachine;
+    protected $isMachine;
 
     /**
      * @var string
      */
-    private $countryCode;
+    protected $countryCode;
 
     /**
      * @var int
      */
-    private $cityId;
+    protected $cityId;
 
     /**
      * @var string
      */
-    private $postCode;
+    protected $postCode;
 
     /**
      * @var string
      */
-    private $cityName;
+    protected $cityName;
 
     /**
      * @var string
      */
-    private $cityNameEnglish;
+    protected $cityNameEnglish;
 
     /**
      * @var string
      */
-    private $address;
+    protected $address;
 
     /**
      * @var string
      */
-    private $addressEnglish;
+    protected $addressEnglish;
 
     /**
      * @var int
      */
-    private $quarterId;
+    protected $quarterId;
 
     /**
      * @var string
      */
-    private $quarterName;
+    protected $quarterName;
 
     /**
      * @var string
      */
-    private $quarterNameEnglish;
+    protected $quarterNameEnglish;
 
     /**
      * @var int
      */
-    private $streetId;
+    protected $streetId;
 
     /**
      * @var Street
      */
-    private $street;
+    protected $street;
 
     /**
      * @var string
      */
-    private $phoneNumber;
+    protected $phoneNumber;
 
     /**
      * @var string
      */
-    private $email;
+    protected $email;
 
     /**
      * @var \DateTime
      */
-    private $workBegin;
+    protected $workBegin;
 
     /**
      * @var \DateTime
      */
-    private $workEnd;
+    protected $workEnd;
 
     /**
      * @var \DateTime
      */
-    private $workBeginSaturday;
+    protected $workBeginSaturday;
 
     /**
      * @var \DateTime
      */
-    private $workEndSaturday;
+    protected $workEndSaturday;
 
     /**
      * @var \DateTime
      */
-    private $timePriority;
+    protected $timePriority;
 
     /**
      * @var \DateTime
      */
-    private $updatedOn;
+    protected $updatedOn;
 
     /**
      * @var string
      */
-    private $hubCode;
+    protected $hubCode;
 
     /**
      * @var string
      */
-    private $hubName;
+    protected $hubName;
 
     /**
      * @var string
      */
-    private $hubNameEnglish;
+    protected $hubNameEnglish;
 
     /**
      * @return int

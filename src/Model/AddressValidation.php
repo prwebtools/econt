@@ -11,37 +11,37 @@ class AddressValidation extends AbstractModel
     /**
      * @var string
      */
-    private $city;
+    protected $city;
 
     /**
      * @var string
      */
-    private $postCode;
+    protected $postCode;
 
     /**
      * @var string
      */
-    private $officeCode;
+    protected $officeCode;
 
     /**
      * @var string
      */
-    private $quarter;
+    protected $quarter;
 
     /**
      * @var Street|null
      */
-    private $street;
+    protected $street;
 
     /**
      * @var string “normal” – адреса е валиден; “processed” – адреса е валиден след обработка; “invalid” – адреса не е валиден
      */
-    private $validationStatus;
+    protected $validationStatus;
 
     /**
      * @var string|null – текст на грешката ако адреса не е валиден;
      */
-    private $error;
+    protected $error;
 
     /**
      * @return string

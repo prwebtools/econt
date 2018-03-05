@@ -30,7 +30,7 @@ class Shipment extends AbstractModel
     const TARIFF_SUB_CODE_DOOR_BANK = 'DOOR_BANK';
     const TARIFF_SUB_CODE_OFFICE_BANK = 'OFFICE_BANK';
 
-    private static $shipmentTypes = [
+    protected static $shipmentTypes = [
         self::SHIPMENT_TYPE_PACK,
         self::SHIPMENT_TYPE_DOCUMENT,
         self::SHIPMENT_TYPE_PALLET,
@@ -45,7 +45,7 @@ class Shipment extends AbstractModel
         self::SHIPMENT_TYPE_MONEY_TRANSFER,
     ];
 
-    private static $tariffSubCodes = [
+    protected static $tariffSubCodes = [
         self::TARIFF_SUB_CODE_DOOR_DOOR,
         self::TARIFF_SUB_CODE_OFFICE_DOOR,
         self::TARIFF_SUB_CODE_DOOR_OFFICE,
@@ -57,72 +57,72 @@ class Shipment extends AbstractModel
     /**
      * @var string|null опционално поле за номер на пратка;
      */
-    private $loadingNumber;
+    protected $loadingNumber;
 
     /**
      * @var string|null номер на използваната опаковка;
      */
-    private $envelopeNumber;
+    protected $envelopeNumber;
 
     /**
      * @var string тип на пратката. PACK – колет, DOCUMENT - документи, PALLET – палет, CARGO – карго експрес, DOCUMENTPALLET – палет + документи;За пощенски пратки: SMALL_ENVELOPE – малко писмо, BIG_ENVELOPE – голямо писмо, POST_PACK - колет, PRESS – печатни произведения, ADV – пряка пощенска реклама, SECOGRAM – секограма; MONEY_TRANSFER – паричен превод;
      */
-    private $shipmentType;
+    protected $shipmentType;
 
     /**
      * @var string|null описание на пратката;
      */
-    private $description;
+    protected $description;
 
     /**
      * @var int брой пакети
      */
-    private $packCount;
+    protected $packCount;
 
     /**
      * @var string тегло (кг)
      */
-    private $weight;
+    protected $weight;
 
     /**
      * @var string начин на доставка възможни стойности: DOOR_DOOR, OFFICE_DOOR, DOOR_OFFICE, OFFICE_OFFICE; за парични преводи по банка: DOOR_BANK, OFFICE_BANK
      */
-    private $tariffSubCode;
+    protected $tariffSubCode;
 
     /**
      * @var bool разрешава се преглед на пратката преди събиране на наложения платеж
      */
-    private $payAfterAccept = false;
+    protected $payAfterAccept = false;
 
     /**
      * @var bool пратката да се прегледа от получателя и да плати наложения платеж само ако приеме стоката ми
      */
-    private $invoiceBeforePayCashOnDelivery = false;
+    protected $invoiceBeforePayCashOnDelivery = false;
 
     /**
      * @var bool - пратката да се прегледа и тества от получателя и да плати наложения платеж само ако приеме стоката ми
      */
-    private $payAfterTest = false;
+    protected $payAfterTest = false;
 
     /**
      * @var \DateTime|null дата на изпращане на пратката – по подразбиране текущата;
      */
-    private $sendDate;
+    protected $sendDate;
 
     /**
      * @var string|null Дата за доставка на пратката - възможните стойности са: - work_day – първия работен ден, half_day – първия работен ден или ден с дежурства; или някоя датите върнати от запитване „информация кои са дните за разнос по дадена дата”. По подразбиране се взема първата възможна дата за доставка
      */
-    private $deliveryDate;
+    protected $deliveryDate;
 
     /**
      * @var bool дали пратката е с размери под 60 см
      */
-    private $sizeUnder60cm = true;
+    protected $sizeUnder60cm = true;
 
     /**
      * @var string|null Номер на поръчка
      */
-    private $orderNumber;
+    protected $orderNumber;
 
     /**
      * @return null|string

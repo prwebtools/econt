@@ -7,22 +7,22 @@ class Address extends AbstractModel
     /**
      * @var string
      */
-    private $city;
+    protected $city;
 
     /**
      * @var string
      */
-    private $postCode;
+    protected $postCode;
 
     /**
      * @var string|null
      */
-    private $quarter;
+    protected $quarter;
 
     /**
      * @var Street|null
      */
-    private $street;
+    protected $street;
 
     /**
      * @return string

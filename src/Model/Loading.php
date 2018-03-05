@@ -13,17 +13,17 @@ class Loading extends AbstractModel
     /**
      * @var Sender изпращач
      */
-    private $sender;
+    protected $sender;
 
     /**
      * @var Receiver получател
      */
-    private $receiver;
+    protected $receiver;
 
     /**
      * @var Shipment товарителница
      */
-    private $shipment;
+    protected $shipment;
 
     /**
      * @return Sender

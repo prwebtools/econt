@@ -13,27 +13,27 @@ class LoadingPrice extends AbstractModel
     /**
      * @var string
      */
-    private $total;
+    protected $total;
 
     /**
      * @var string
      */
-    private $senderTotal;
+    protected $senderTotal;
 
     /**
      * @var string
      */
-    private $receiverTotal;
+    protected $receiverTotal;
 
     /**
      * @var string
      */
-    private $otherTotal;
+    protected $otherTotal;
 
     /**
      * @var Currency
      */
-    private $currency;
+    protected $currency;
 
     /**
      * @return string

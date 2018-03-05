@@ -7,12 +7,12 @@ class BankDetails extends AbstractModel
     /**
      * @var string
      */
-    private $bic;
+    protected $bic;
 
     /**
      * @var string
      */
-    private $iban;
+    protected $iban;
 
     /**
      * @return string

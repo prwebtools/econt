@@ -7,37 +7,37 @@ class Street extends AbstractModel
     /**
      * @var string|null
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string|null
      */
-    private $number;
+    protected $number;
 
     /**
      * @var string|null
      */
-    private $block;
+    protected $block;
 
     /**
      * @var string|null
      */
-    private $entrance;
+    protected $entrance;
 
     /**
      * @var string|null
      */
-    private $floor;
+    protected $floor;
 
     /**
      * @var string|null
      */
-    private $apartment;
+    protected $apartment;
 
     /**
      * @var string|null
      */
-    private $other;
+    protected $other;
 
     /**
      * @return null|string

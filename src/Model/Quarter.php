@@ -7,32 +7,32 @@ class Quarter extends AbstractModel
     /**
      * @var int
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      */
-    private $nameEnglish;
+    protected $nameEnglish;
 
     /**
      * @var string
      */
-    private $cityPostCode;
+    protected $cityPostCode;
 
     /**
      * @var int
      */
-    private $cityId;
+    protected $cityId;
 
     /**
      * @var \DateTime
      */
-    private $updatedTime;
+    protected $updatedTime;
 
     /**
      * @return int

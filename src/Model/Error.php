@@ -7,12 +7,12 @@ class Error extends AbstractModel
     /**
      * @var array
      */
-    private $messages = [];
+    protected $messages = [];
 
     /**
      * @var string
      */
-    private $code;
+    protected $code;
 
     /**
      * @return array

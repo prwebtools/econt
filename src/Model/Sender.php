@@ -13,57 +13,57 @@ class Sender extends AbstractModel
     /**
      * @var string|null
      */
-    private $countryCode;
+    protected $countryCode;
 
     /**
      * @var string|null
      */
-    private $city;
+    protected $city;
 
     /**
      * @var string|null
      */
-    private $postCode;
+    protected $postCode;
 
     /**
      * @var string|null
      */
-    private $officeCode;
+    protected $officeCode;
 
     /**
      * @var string|null
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string|null
      */
-    private $namePerson;
+    protected $namePerson;
 
     /**
      * @var string|null
      */
-    private $email;
+    protected $email;
 
     /**
      * @var string|null
      */
-    private $quarter;
+    protected $quarter;
 
     /**
      * @var Street|null
      */
-    private $street;
+    protected $street;
 
     /**
      * @var string|null
      */
-    private $phoneNumber;
+    protected $phoneNumber;
 
     /**
      * @var bool
      */
-    private $emailOnDelivery = false;
+    protected $emailOnDelivery = false;
 
     /**
      * @return null|string

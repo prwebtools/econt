@@ -13,57 +13,57 @@ class ParcelResult extends AbstractModel
     /**
      * @var string|null
      */
-    private $loadingId;
+    protected $loadingId;
 
     /**
      * @var string|null
      */
-    private $loadingNumber;
+    protected $loadingNumber;
 
     /**
      * @var string|null
      */
-    private $courierRequestId;
+    protected $courierRequestId;
 
     /**
      * @var \DateTime
      */
-    private $deliveryDate;
+    protected $deliveryDate;
 
     /**
      * @var LoadingPrice
      */
-    private $loadingPrice;
+    protected $loadingPrice;
 
     /**
      * @var string|null
      */
-    private $loadingDiscount;
+    protected $loadingDiscount;
 
     /**
      * @var Error|null
      */
-    private $error;
+    protected $error;
 
     /**
      * @var string|null
      */
-    private $pdfUrl;
+    protected $pdfUrl;
 
     /**
      * @var string|null
      */
-    private $returnReason;
+    protected $returnReason;
 
     /**
      * @var string|null
      */
-    private $previousParcelNumber;
+    protected $previousParcelNumber;
 
     /**
      * @var string|null
      */
-    private $nextParcels;
+    protected $nextParcels;
 
     /**
      * @return null|string

@@ -7,32 +7,32 @@ class Zone extends AbstractModel
     /**
      * @var int
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      */
-    private $nameEnglish;
+    protected $nameEnglish;
 
     /**
      * @var bool
      */
-    private $national;
+    protected $national;
 
     /**
      * @var bool
      */
-    private $isEe;
+    protected $isEe;
 
     /**
      * @var \DateTime|null
      */
-    private $updatedOn;
+    protected $updatedOn;
 
     /**
      * @return int
