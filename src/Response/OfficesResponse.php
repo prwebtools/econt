@@ -14,7 +14,7 @@ class OfficesResponse
     /**
      * @return Office[]
      */
-    public function getOffices(): array
+    public function getOffices()
     {
         return $this->offices;
     }
