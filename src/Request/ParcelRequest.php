@@ -3,6 +3,7 @@
 namespace Todstoychev\Econt\Request;
 
 use Todstoychev\Econt\Model\Loading;
+use Todstoychev\Econt\Model\Services;
 
 class ParcelRequest
 {
@@ -30,6 +31,11 @@ class ParcelRequest
      * @var Loading[]
      */
     private $loadings = [];
+
+    /**
+     * @var Services
+     */
+    private $services;
 
     /**
      * @return bool
@@ -133,11 +139,33 @@ class ParcelRequest
 
     /**
      * @param Loading $loading
+     *
      * @return ParcelRequest
      */
     public function addLoading(Loading $loading)
     {
         $this->loadings[] = $loading;
+
+        return $this;
+    }
+
+    /**
+     * @return Services
+     */
+    public function getServices()
+    {
+        return $this->services;
+    }
+
+    /**
+     * @param Services $services
+     *
+     * @return ParcelRequest
+     */
+    public function setServices($services)
+    {
+        $this->services = $services;
+
         return $this;
     }
 }

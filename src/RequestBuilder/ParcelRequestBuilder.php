@@ -2,8 +2,10 @@
 
 namespace Todstoychev\Econt\RequestBuilder;
 
+use Todstoychev\Econt\Model\Payment;
 use Todstoychev\Econt\Model\Receiver;
 use Todstoychev\Econt\Model\Sender;
+use Todstoychev\Econt\Model\Services;
 use Todstoychev\Econt\Model\Shipment;
 use Todstoychev\Econt\Request\ParcelRequest;
 
@@ -30,6 +32,8 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
             $this->addShipment($row, $loading->getShipment());
         }
 
+        $this->setServices($row, $request->getServices());
+
         return $xml;
     }
 
@@ -54,6 +58,7 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
             $row->addChild('street_ap', $sender->getStreet()->getApartment());
             $row->addChild('street_other', $sender->getStreet()->getOther());
         }
+
         $row->addChild('phone_num', $sender->getPhoneNumber());
         $row->addChild('email_on_delivery', $sender->isEmailOnDelivery());
     }
@@ -79,12 +84,15 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
             $row->addChild('street_ap', $receiver->getStreet()->getApartment());
             $row->addChild('street_other', $receiver->getStreet()->getOther());
         }
+
         $row->addChild('phone_num', $receiver->getPhoneNumber());
         $row->addChild('sms_no', $receiver->getSmsNumber());
+
         if ($receiver->getBankDetails()) {
             $row->addChild('bic', $receiver->getBankDetails()->getBic());
             $row->addChild('iban', $receiver->getBankDetails()->getIban());
         }
+
         $row->addChild('provider_id', $receiver->getProviderId());
     }
 
@@ -105,5 +113,32 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
         $row->addChild('send_date', $shipment->getSendDate());
         $row->addChild('delivery_day', $shipment->getDeliveryDate());
         $row->addChild('size_under_60cm', $shipment->isSizeUnder60cm());
+    }
+
+    /**
+     * @param \SimpleXMLElement $row
+     * @param Services          $services
+     *
+     * @return \SimpleXMLElement
+     */
+    private function setServices(\SimpleXMLElement $row, Services $services)
+    {
+        $servicesRow = $row->addChild('services');
+        $this->setPayment($servicesRow, $services->getPayment());
+
+        return $row;
+    }
+
+    /**
+     * @param \SimpleXMLElement $services
+     * @param Payment           $payment
+     *
+     * @return \SimpleXMLElement
+     */
+    private function setPayment(\SimpleXMLElement $services, Payment $payment)
+    {
+        $services->addChild('cd', $payment->getSum())->addAttribute('type', $payment->getType());
+
+        return $services;
     }
 }
