@@ -3,6 +3,7 @@
 namespace Todstoychev\Econt\Request;
 
 use Todstoychev\Econt\Model\Loading;
+use Todstoychev\Econt\Model\Payment;
 use Todstoychev\Econt\Model\Services;
 
 class ParcelRequest
@@ -36,6 +37,11 @@ class ParcelRequest
      * @var Services
      */
     private $services;
+
+    /**
+     * @var Payment
+     */
+    private $payment;
 
     /**
      * @return bool
@@ -165,6 +171,26 @@ class ParcelRequest
     public function setServices($services)
     {
         $this->services = $services;
+
+        return $this;
+    }
+
+    /**
+     * @return Payment
+     */
+    public function getPayment()
+    {
+        return $this->payment;
+    }
+
+    /**
+     * @param Payment $payment
+     *
+     * @return ParcelRequest
+     */
+    public function setPayment($payment)
+    {
+        $this->payment = $payment;
 
         return $this;
     }

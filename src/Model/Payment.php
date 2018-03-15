@@ -8,45 +8,99 @@ class Payment
     const SENDER = 'SENDER';
     const OTHER = 'OTHER';
 
+    const CASH = 'CASH';
+    const CREDIT = 'CREDIT';
+    const BONUS = 'BONUS';
+    const VOUCHER = 'VOUCHER';
+
     /**
      * @var array
      */
-    protected static $types = [
+    protected static $sides = [
         self::RECEIVER,
         self::SENDER,
         self::OTHER,
     ];
 
     /**
+     * @var array
+     */
+    protected static $methods = [
+        self::CASH,
+        self::CREDIT,
+        self::BONUS,
+        self::VOUCHER,
+    ];
+
+    /**
      * @var string
      */
-    protected $type;
+    protected $side;
+
+    /**
+     * @var string
+     */
+    protected $method;
 
     /**
      * @var float
      */
-    protected $sum;
+    protected $receiverShareSum;
+
+    /**
+     * @var float
+     */
+    protected $sharePercent;
+
+    /**
+     * @var string
+     */
+    protected $keyWord;
 
     /**
      * @return string
      */
-    public function getType()
+    public function getSide()
     {
-        return $this->type;
+        return $this->side;
     }
 
     /**
-     * @param string $type
+     * @param string $side
      *
      * @return Payment
      */
-    public function setType($type)
+    public function setSide($side)
     {
-        if (!in_array($type, self::$types)) {
-            throw new \InvalidArgumentException(sprintf('%s is not allowed value for %s', $type, __METHOD__));
+        if (!in_array($side, self::$sides)) {
+            throw new \InvalidArgumentException(sprintf('%s is not allowed value for %s', $side, __METHOD__));
         }
 
-        $this->type = $type;
+        $this->side = $side;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    /**
+     * @param string $method
+     *
+     * @return Payment
+     */
+    public function setMethod($method)
+    {
+        if (!in_array($method, self::$methods)) {
+            throw new \InvalidArgumentException(sprintf('%s is not allowed value for %s', $method, __METHOD__));
+        }
+
+        $this->method = $method;
 
         return $this;
     }
@@ -54,19 +108,59 @@ class Payment
     /**
      * @return float
      */
-    public function getSum()
+    public function getReceiverShareSum()
     {
-        return $this->sum;
+        return $this->receiverShareSum;
     }
 
     /**
-     * @param float $sum
+     * @param float $receiverShareSum
      *
      * @return Payment
      */
-    public function setSum($sum)
+    public function setReceiverShareSum($receiverShareSum)
     {
-        $this->sum = $sum;
+        $this->receiverShareSum = $receiverShareSum;
+
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getSharePercent()
+    {
+        return $this->sharePercent;
+    }
+
+    /**
+     * @param float $sharePercent
+     *
+     * @return Payment
+     */
+    public function setSharePercent($sharePercent)
+    {
+        $this->sharePercent = $sharePercent;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKeyWord()
+    {
+        return $this->keyWord;
+    }
+
+    /**
+     * @param string $keyWord
+     *
+     * @return Payment
+     */
+    public function setKeyWord($keyWord)
+    {
+        $this->keyWord = $keyWord;
 
         return $this;
     }

@@ -23,16 +23,16 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
         $system->addChild('email_errors_to', $request->getEmailErrorsTo());
 
         $loadings = $xml->addChild('loadings');
+        $row = $loadings->addChild('row');
 
         foreach ($request->getLoadings() as $loading) {
-            $row = $loadings->addChild('row');
-
             $this->addSender($row, $loading->getSender());
             $this->addReceiver($row, $loading->getReceiver());
             $this->addShipment($row, $loading->getShipment());
         }
 
         $this->setServices($row, $request->getServices());
+        $this->setPayment($row, $request->getPayment());
 
         return $xml;
     }
@@ -137,7 +137,8 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
      */
     private function setPayment(\SimpleXMLElement $services, Payment $payment)
     {
-        $services->addChild('cd', $payment->getSum())->addAttribute('type', $payment->getType());
+        $payment = $services->addChild('payment');
+        $payment->addChild('cd', $payment->getSum())->addAttribute('type', $payment->getType());
 
         return $services;
     }
