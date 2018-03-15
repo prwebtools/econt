@@ -124,22 +124,26 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
     private function setServices(\SimpleXMLElement $row, Services $services)
     {
         $servicesRow = $row->addChild('services');
-        $this->setPayment($servicesRow, $services->getPayment());
+        $servicesRow->addChild('cd', $services->getPrice())->addAttribute('type', $services->getCdType());
 
         return $row;
     }
 
     /**
-     * @param \SimpleXMLElement $services
+     * @param \SimpleXMLElement $row
      * @param Payment           $payment
      *
      * @return \SimpleXMLElement
      */
-    private function setPayment(\SimpleXMLElement $services, Payment $payment)
+    private function setPayment(\SimpleXMLElement $row, Payment $payment)
     {
-        $payment = $services->addChild('payment');
-        $payment->addChild('cd', $payment->getSum())->addAttribute('type', $payment->getType());
+        $paymentRow = $row->addChild('payment');
+        $paymentRow->addChild('method', $payment->getMethod());
+        $paymentRow->addChild('side', $payment->getSide());
+        $paymentRow->addChild('receiver_share_sum', $payment->getReceiverShareSum());
+        $paymentRow->addChild('share_percent', $payment->getSharePercent());
+        $paymentRow->addChild('key_word', $payment->getKeyWord());
 
-        return $services;
+        return $row;
     }
 }
