@@ -1,27 +1,24 @@
 {
-    "name": "todstoychev/econt",
-    "description": "This bundle provides integration with ECONT Courier. Module is based on Bozhidar Hristov's vm/econt.",
-    "type": "component",
-    "authors": [
-        {
-            "name": "Bozhidar Hristov",
-            "email": "b.hristov@vm5.eu"
-        },
-        {
-            "name": "Todor Todorov",
-            "email": "todstoychev@gmail.com"
-        }
-    ],
-    "keywords": [
-        "econt", "courier"
-    ],
-    "require": {
-        "guzzlehttp/guzzle": ">=5.0",
-        "php": ">=5.4"
-    },
-    "autoload": {
-	"psr-4": {
-            "Todstoychev\\Econt\\": "src/"
-        }
+  "name": "todstoychev/econt",
+  "description": "Econt API integration package",
+  "type": "library",
+  "license": "GNU GPL v3",
+  "authors": [
+    {
+      "name": "Todor Todorov",
+      "email": "todstoychev@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "symfony/config": "3.4.*",
+    "symfony/options-resolver": "3.4.*",
+    "twig/twig": "1.35.3",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Todstoychev\\Econt\\": "src/"
+    }
+  }
 }
