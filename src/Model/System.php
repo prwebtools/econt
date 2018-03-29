@@ -4,7 +4,7 @@ namespace Todstoychev\Econt\Model;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-final class System
+final class System extends AbstractModel
 {
     /**
      * @var bool
@@ -37,24 +37,10 @@ final class System
     private $options;
 
     /**
-     * System constructor.
-     * @param array $options
-     */
-    public function __construct(array $options = [])
-    {
-        $this->configureOptions(new OptionsResolver(), $options);
-        $this->setValidate($this->options['validate'])
-            ->setEmailErrorsTo($this->options['emailErrorsTo'])
-            ->setOnlyCalculate($this->options['onlyCalculate'])
-            ->setProcessAllParcels($this->options['processAllParcels'])
-            ->setResponseType($this->options['responseType']);
-    }
-
-    /**
      * @param OptionsResolver $resolver
      * @param array $options
      */
-    private function configureOptions(OptionsResolver $resolver, array $options = [])
+    protected function configureOptions(OptionsResolver $resolver, array $options = [])
     {
         $resolver->setDefaults(
             [

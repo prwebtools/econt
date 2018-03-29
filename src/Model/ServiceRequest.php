@@ -17,17 +17,6 @@ class ServiceRequest extends AbstractModel
     protected $client;
 
     /**
-     * ServiceRequest constructor.
-     * @param array $options
-     */
-    public function __construct(array $options = [])
-    {
-        parent::__construct($options);
-        $this->setRequestType($this->options['request_type'])
-            ->setClient($this->options['client']);
-    }
-
-    /**
      * @return string
      */
     public function getRequestType()

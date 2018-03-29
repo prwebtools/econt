@@ -16,14 +16,6 @@ final class Client extends AbstractModel
      */
     private $password;
 
-    public function __construct(array $options = [])
-    {
-        parent::__construct($options);
-
-        $this->setUsername($this->options['username'])
-            ->setPassword($this->options['password']);
-    }
-
     /**
      * @return string
      */
