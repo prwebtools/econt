@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request>
+    {% include 'client.xml.twig' with {'client': request.client} %}
+    <request_type>{{ request.requestType }}</request_type>
+</request>

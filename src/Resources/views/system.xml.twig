@@ -1,0 +1,11 @@
+<system>
+    <validate>{{ system.validate }}</validate>
+    <response_type>{{ system.responseType }}</response_type>
+    <only_calculate>{{ system.onlyCalculate }}</only_calculate>
+    <process_all_parcels>{{ system.processAllParcels }}</process_all_parcels>
+    {% if system.processAllParcels and system.emailErrorsTo is not empty %}
+        <email_errors_to>{{ system.emailErrorsTo }}</email_errors_to>
+    {% else %}
+        <email_errors_to/>
+    {% endif %}
+</system>

@@ -1,0 +1,16 @@
+econt:
+  template_directories: []
+  environment: dev
+
+  environments:
+    dev:
+      username: demo
+      password: demo
+      service_request_url: 'http://demo.econt.com/e-econt/xml_service_tool.php'
+      parcel_request_url: 'http://demo.econt.com/e-econt/xml_parcel_import2.php'
+
+    prod:
+      username: username
+      password: password
+      service_request_url: 'http://www.econt.com/e-econt/xml_service_tool.php'
+      parcel_request_url: 'http://www.econt.com/e-econt/xml_parcel_import2.php'
