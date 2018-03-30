@@ -37,6 +37,17 @@ final class System extends AbstractModel
     private $options;
 
     /**
+     * @var array
+     */
+    public static $definedOptions = [
+        'validate' => 'bool',
+        'response_type' => 'string',
+        'only_calculate' => 'bool',
+        'process_all_parcels' => 'bool',
+        'email_errors_to' => 'string',
+    ];
+
+    /**
      * @param OptionsResolver $resolver
      * @param array $options
      */

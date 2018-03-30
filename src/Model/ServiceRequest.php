@@ -16,6 +16,11 @@ class ServiceRequest extends AbstractModel
      */
     protected $client;
 
+    public static $definedOptions = [
+        'request_type' => 'string',
+        'client' => Client::class,
+    ];
+
     /**
      * @return string
      */

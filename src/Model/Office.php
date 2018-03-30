@@ -144,7 +144,7 @@ class Office extends AbstractModel
     /**
      * @var array
      */
-    protected $definedOptions = [
+    public static $definedOptions = [
         'id' => 'integer',
         'name' => 'string',
         'name_en' => 'string',

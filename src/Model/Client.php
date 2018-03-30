@@ -16,6 +16,11 @@ final class Client extends AbstractModel
      */
     private $password;
 
+    public static $definedOptions = [
+        'username' => 'string',
+        'password' => 'string',
+    ];
+
     /**
      * @return string
      */

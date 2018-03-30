@@ -29,7 +29,7 @@ class OfficeDetails extends AbstractModel
     /**
      * @var array
      */
-    protected $definedOptions = [
+    public static $definedOptions = [
         'courier' => 'boolean',
         'post' => 'boolean',
         'cargo' => 'boolean',
