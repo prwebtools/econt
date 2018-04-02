@@ -22,8 +22,8 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
             'username' => $this->options['username'],
             'password' => $this->options['password'],
         ];
-        $client = new Client($clientOptions);
-        $request = new ServiceRequest(['request_type' => $this->options['request_type'], 'client' => $client]);
+        $client = new Client();
+        $request = new ServiceRequest();
 
         return $this->view->render('service_request.xml.twig', ['request' => $request]);
     }

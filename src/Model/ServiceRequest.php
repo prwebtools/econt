@@ -2,8 +2,6 @@
 
 namespace Todstoychev\Econt\Model;
 
-use Symfony\Component\OptionsResolver\OptionsResolver;
-
 class ServiceRequest extends AbstractModel
 {
     /**
@@ -16,9 +14,20 @@ class ServiceRequest extends AbstractModel
      */
     protected $client;
 
-    public static $definedOptions = [
+    /**
+     * @var array
+     */
+    protected $definedOptions = [
         'request_type' => 'string',
         'client' => Client::class,
+    ];
+
+    /**
+     * @var array
+     */
+    protected $requiredOptions = [
+        'request_type',
+        'client',
     ];
 
     /**
@@ -57,16 +66,5 @@ class ServiceRequest extends AbstractModel
         $this->client = $client;
 
         return $this;
-    }
-
-    /**
-     * @param OptionsResolver $resolver
-     * @param array $options
-     */
-    protected function configureOptions(OptionsResolver $resolver, array $options = [])
-    {
-        $resolver->setRequired(['request_type', 'client'])
-            ->setAllowedTypes('client', Client::class);
-        $this->options = $resolver->resolve($options);
     }
 }

@@ -19,8 +19,8 @@ class OfficeResponseParser
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizers = array(new ObjectNormalizer(), new ArrayDenormalizer());
         $serializer = new Serializer($normalizers, $encoders);
-        $mapper = new AddressDetailsMapper(new ModelOptionsResolver(AddressDetails::class), $serializer);
-
+        $mapper = new AddressDetailsMapper(new ModelOptionsResolver(new AddressDetails()), $serializer);
+die(var_dump($data));
         foreach ($data->offices->children() as $item) {
             var_dump($mapper->map($item));
         }

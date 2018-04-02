@@ -16,9 +16,20 @@ final class Client extends AbstractModel
      */
     private $password;
 
-    public static $definedOptions = [
+    /**
+     * @var array
+     */
+    protected $definedOptions = [
         'username' => 'string',
         'password' => 'string',
+    ];
+
+    /**
+     * @var array
+     */
+    protected $requiredOptions = [
+        'username',
+        'password',
     ];
 
     /**
@@ -57,22 +68,5 @@ final class Client extends AbstractModel
         $this->password = $password;
 
         return $this;
-    }
-
-    /**
-     * @param OptionsResolver $resolver
-     * @param array $options
-     */
-    protected function configureOptions(OptionsResolver $resolver, array $options = [])
-    {
-        $resolver->setRequired(
-            [
-                'username',
-                'password',
-            ]
-        )
-            ->setAllowedTypes('username', 'string')
-            ->setAllowedTypes('password', 'string');
-        $this->options = $resolver->resolve($options);
     }
 }

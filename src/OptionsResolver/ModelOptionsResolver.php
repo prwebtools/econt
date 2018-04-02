@@ -3,41 +3,28 @@
 namespace Todstoychev\Econt\OptionsResolver;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Todstoychev\Econt\Exception\ModelException;
+use Todstoychev\Econt\Model\AbstractModel;
 
 class ModelOptionsResolver extends OptionsResolver
 {
     /**
-     * @var string
+     * @var AbstractModel
      */
-    protected $modelClass;
-
-    public function __construct($modelClass)
-    {
-        $this->modelClass = $modelClass;
-    }
+    protected $model;
 
     /**
-     * @return string
+     * ModelOptionsResolver constructor.
+     *
+     * @param AbstractModel|null $model
      */
-    public function getModelClass()
+    public function __construct(AbstractModel $model = null)
     {
-        return $this->modelClass;
-    }
-
-    /**
-     * @param string $modelClass
-     * @return ModelOptionsResolver
-     */
-    public function setModelClass($modelClass)
-    {
-        $this->modelClass = $modelClass;
-
-        return $this;
+        $this->model = $model;
     }
 
     /**
      * @param array $options
+     *
      * @return array
      */
     public function resolve(array $options = array())
@@ -47,29 +34,38 @@ class ModelOptionsResolver extends OptionsResolver
         return parent::resolve($options);
     }
 
+    /**
+     * @return AbstractModel
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
 
+    /**
+     * @param AbstractModel $model
+     *
+     * @return ModelOptionsResolver
+     */
+    public function setModel($model)
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
     protected function configureOptions()
     {
-        if (!class_exists($this->modelClass)) {
-            throw new ModelException("Model {$this->modelClass} not found!");
-        }
+        $this->setDefined(array_keys($this->model->getDefinedOptions()));
+        $this->setRequired($this->model->getRequiredOptions());
 
-        if (!property_exists($this->modelClass, 'definedOptions')) {
-            throw new ModelException("Property 'definedOptions' not found in model {$this->modelClass}!");
-        }
-
-        if (!property_exists($this->modelClass, 'requiredOptions')) {
-            throw new ModelException("Property 'requiredOptions' not found in model {$this->modelClass}!");
-        }
-
-        $definedOptions = $this->modelClass::$definedOptions;
-        $requiredOptions = $this->modelClass::$requiredOptions;
-        $this->setDefined(array_keys($definedOptions));
-
-        foreach ($definedOptions as $name => $type) {
+        foreach ($this->model->getDefinedOptions() as $name => $type) {
             $this->setAllowedTypes($name, $type);
         }
 
-        $this->setRequired($requiredOptions);
+        return $this;
     }
 }
