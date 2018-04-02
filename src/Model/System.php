@@ -34,42 +34,13 @@ final class System extends AbstractModel
     /**
      * @var array
      */
-    private $options;
-
-    /**
-     * @var array
-     */
-    public static $definedOptions = [
+    protected $definedOptions = [
         'validate' => 'bool',
         'response_type' => 'string',
         'only_calculate' => 'bool',
         'process_all_parcels' => 'bool',
         'email_errors_to' => 'string',
     ];
-
-    /**
-     * @param OptionsResolver $resolver
-     * @param array $options
-     */
-    protected function configureOptions(OptionsResolver $resolver, array $options = [])
-    {
-        $resolver->setDefaults(
-            [
-                'validate' => true,
-                'responseType' => 'XML',
-                'onlyCalculate' => true,
-                'processAllParcels' => true,
-                'emailErrorsTo' => '',
-            ]
-        );
-        $resolver->setAllowedTypes('validate', 'bool');
-        $resolver->setAllowedTypes('responseType', 'string');
-        $resolver->setAllowedValues('responseType', ['XML', 'HTML']);
-        $resolver->setAllowedTypes('onlyCalculate', 'bool');
-        $resolver->setAllowedTypes('processAllParcels', 'bool');
-        $resolver->setAllowedTypes('emailErrorsTo', 'string');
-        $this->options = $resolver->resolve($options);
-    }
 
     /**
      * @return bool

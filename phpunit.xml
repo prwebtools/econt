@@ -27,5 +27,8 @@
         <testsuite name="Mapper">
             <directory>tests/Mapper</directory>
         </testsuite>
+        <testsuite name="Normalizer">
+            <directory>tests/Normalizer</directory>
+        </testsuite>
     </testsuites>
 </phpunit>

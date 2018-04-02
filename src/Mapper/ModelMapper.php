@@ -14,6 +14,7 @@ class ModelMapper
      */
     public function map(AbstractModel $model, array $options)
     {
+
         foreach ($options as $field => $value) {
             $methodName = 'set'.ucfirst($field);
 
