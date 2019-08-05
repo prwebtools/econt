@@ -1,5 +1,5 @@
 {
-    "name": "todstoychev/econt",
+    "name": "deba12/econt",
     "description": "This bundle provides integration with ECONT Courier. Module is based on Bozhidar Hristov's vm/econt.",
     "type": "component",
     "authors": [
