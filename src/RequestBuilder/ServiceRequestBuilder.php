@@ -8,7 +8,7 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
 {
     private $requestMapping = [
         'Todstoychev\Econt\Request\ZonesRequest' => 'cities_zones',
-        'Todstoychev\Econt\Request\QuortersRequest' => 'cities_quarters',
+        'Todstoychev\Econt\Request\QuartersRequest' => 'cities_quarters',
         'Todstoychev\Econt\Request\AddressValidationRequest' => 'check_address',
         'Todstoychev\Econt\Request\OfficesRequest' => 'offices',
     ];
