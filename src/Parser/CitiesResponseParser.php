@@ -3,7 +3,6 @@
 namespace Todstoychev\Econt\Parser;
 
 use Todstoychev\Econt\Model\Cities;
-use Todstoychev\Econt\Model\Quarter;
 use Todstoychev\Econt\Response\CitiesResponse;
 
 class CitiesResponseParser
@@ -13,6 +12,7 @@ class CitiesResponseParser
 		$response = new CitiesResponse();
 
 		foreach ($xml->cities->e as $row) {
+
 			$cities = new Cities();
 			$cities->setId((int) $row->id);
 			$cities->setType($row->type);
@@ -26,10 +26,11 @@ class CitiesResponseParser
 			$cities->setOfficeId($row->id_office);
 
 			$response->addCity($cities);
+
 		}
 
 		return $response;
-	}
 
+	}
 
 }
