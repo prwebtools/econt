@@ -11,6 +11,7 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
         'Todstoychev\Econt\Request\QuartersRequest' => 'cities_quarters',
         'Todstoychev\Econt\Request\AddressValidationRequest' => 'check_address',
         'Todstoychev\Econt\Request\OfficesRequest' => 'offices',
+	    'Todstoychev\Econt\Request\CitiesRequest' => 'cities',
     ];
 
     public function createSimpleXML($request)
