@@ -19,6 +19,8 @@ class Services
 
     protected $oc;
     protected $oc_currency = 'BGN';
+    protected $sms_notification;
+
 
     /**
      * @return string
@@ -83,6 +85,20 @@ class Services
 	public function setOcCurrency($value) {
 
 		$this->oc_currency = $value;
+
+		return $this;
+
+	}
+
+	public function getSmsNotification() {
+
+		return $this->sms_notification;
+
+	}
+
+	public function setSmsNotification(bool $status) {
+
+		$this->oc_currency = $status;
 
 		return $this;
 

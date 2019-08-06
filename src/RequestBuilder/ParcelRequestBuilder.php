@@ -127,6 +127,7 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
         $servicesRow->addChild('cd', $services->getPrice())->addAttribute('type', $services->getCdType());
         $servicesRow->addChild('oc', $services->getOc());
 		$servicesRow->addChild('oc_currency', $services->getOcCurrency());
+		$servicesRow->addChild('sms_notification', $services->getSmsNotification());
 
         return $row;
     }
