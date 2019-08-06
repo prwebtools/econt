@@ -17,6 +17,9 @@ class Services
      */
     protected $price;
 
+    protected $oc;
+    protected $oc_currency = 'BGN';
+
     /**
      * @return string
      */
@@ -56,4 +59,33 @@ class Services
 
         return $this;
     }
+
+    public function getOc() {
+
+		return $this->oc;
+
+    }
+
+    public function setOc($value) {
+
+		$this->oc = $value;
+
+		return $this;
+
+    }
+
+	public function getOcCurrency() {
+
+		return $this->oc_currency;
+
+	}
+
+	public function setOcCurrency($value) {
+
+		$this->oc_currency = $value;
+
+		return $this;
+
+	}
+
 }
