@@ -3,6 +3,7 @@
 namespace Todstoychev\Econt\RequestBuilder;
 
 use Todstoychev\Econt\Request\AddressValidationRequest;
+use Todstoychev\Econt\Request\CancelShipmentRequest;
 
 class ServiceRequestBuilder extends AbstractRequestBuilder
 {
@@ -12,6 +13,7 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
         'Todstoychev\Econt\Request\AddressValidationRequest' => 'check_address',
         'Todstoychev\Econt\Request\OfficesRequest' => 'offices',
 	    'Todstoychev\Econt\Request\CitiesRequest' => 'cities',
+	    'Todstoychev\Econt\Request\CancelShipmentRequest' => 'cancel_shipments',
     ];
 
     public function createSimpleXML($request)
@@ -35,9 +37,14 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
                 $address->addChild('street_ap', $request->getAddress()->getStreet()->getApartment());
                 $address->addChild('street_other', $request->getAddress()->getStreet()->getOther());
             }
+        } elseif($request instanceof CancelShipmentRequest) {
+
+			$shipment = $xml->addChild('num', $request->getShipmentID());
+
         }
 
         return $xml;
+
     }
 
     private function getRequestType($object)
