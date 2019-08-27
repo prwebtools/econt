@@ -21,7 +21,7 @@ abstract class AbstractRequestBuilder implements RequestBuilder
 
     public function setPassword($password)
     {
-        $this->username = $password;
+        $this->password = $password;
     }
 
     /**
