@@ -182,7 +182,7 @@ class Client
      *
      * @return RequestBuilder
      */
-    private function getRequestBuilder($object)
+    function getRequestBuilder($object)
     {
         $builderClass = $this->requestBuilderMapping[get_class($object)];
 
