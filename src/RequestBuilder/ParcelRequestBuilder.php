@@ -2,6 +2,7 @@
 
 namespace Todstoychev\Econt\RequestBuilder;
 
+use Todstoychev\Econt\Model\Instruction;
 use Todstoychev\Econt\Model\Payment;
 use Todstoychev\Econt\Model\Receiver;
 use Todstoychev\Econt\Model\Sender;
@@ -31,6 +32,7 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
             $this->addShipment($row, $loading->getShipment());
         }
 
+        if($request->getInstruction()) $this->setInstruction($row, $request->getInstruction());
         $this->setServices($row, $request->getServices());
         $this->setPayment($row, $request->getPayment());
 
@@ -150,4 +152,14 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
 
         return $row;
     }
+
+    private function setInstruction(\SimpleXMLElement $row, Instruction $instruction)
+    {
+
+		$instructions = $row->addChild('instructions');
+		$e = $instructions->addChild('e');
+		$e->addChild('template', $instruction->getTemplate());
+
+    }
+
 }

@@ -2,6 +2,7 @@
 
 namespace Todstoychev\Econt\Request;
 
+use Todstoychev\Econt\Model\Instruction;
 use Todstoychev\Econt\Model\Loading;
 use Todstoychev\Econt\Model\Payment;
 use Todstoychev\Econt\Model\Services;
@@ -42,6 +43,11 @@ class ParcelRequest
      * @var Payment
      */
     private $payment;
+
+    /*
+     * @var Instruction
+     * */
+    private $instruction;
 
     /**
      * @return bool
@@ -194,4 +200,24 @@ class ParcelRequest
 
         return $this;
     }
+
+	/**
+	 * @return Instruction
+	 */
+	public function getInstruction()
+	{
+		return $this->instruction;
+	}
+
+	/**
+	 * @param Instruction $instruction
+	 *
+	 * @return ParcelRequest
+	 */
+	public function setInstruction($instruction)
+	{
+		$this->instruction = $instruction;
+
+		return $this;
+	}
 }
