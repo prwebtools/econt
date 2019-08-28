@@ -10,7 +10,6 @@ class CancelShipmentResponseParser implements Parser{
 
 	public function parse(\SimpleXMLElement $xml) {
 
-		//print_r($xml);
 		$response = new CancelShipmentResponse();
 		$element = $xml->cancel_shipments->e;
 
