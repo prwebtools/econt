@@ -22,6 +22,7 @@ class ParcelResponseParser implements Parser
             $parcelResult->setCourierRequestId($row->courier_request_id);
             $parcelResult->setDeliveryDate(new \DateTime($row->delivery_date));
             $parcelResult->setLoadingPrice($this->getLoadingPrice($row->loading_price));
+            $parcelResult->setPdfUrl($row->pdf_url);
 
             $error = (string) $row->error;
             $errorCode = (string) $row->error_code;
