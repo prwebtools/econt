@@ -39,7 +39,8 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
             }
         } elseif($request instanceof CancelShipmentRequest) {
 
-			$shipment = $xml->addChild('num', $request->getShipmentID());
+			$cancelShipment = $xml->addChild('cancel_shipments');
+			$cancelShipment->addChild('num', $request->getShipmentID());
 
         }
 
