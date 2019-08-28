@@ -30,6 +30,13 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
             $this->addSender($row, $loading->getSender());
             $this->addReceiver($row, $loading->getReceiver());
             $this->addShipment($row, $loading->getShipment());
+
+            if($loading->getReturnedLoading()) {
+	            $returnedLoading = $row->addChild('returned_loading');
+	            $returnedLoading->addChild('first_loading_num', $loading->getReturnedLoading()->getLoadingNum());
+	            $returnedLoading->addChild('first_loading_receiver_phone', $loading->getReturnedLoading()->getReceiverPhone());
+            }
+
         }
 
         if($request->getInstruction()) $this->setInstruction($row, $request->getInstruction());

@@ -25,6 +25,8 @@ class Loading extends AbstractModel
      */
     protected $shipment;
 
+    protected $returnedLoading;
+
     /**
      * @return Sender
      */
@@ -84,4 +86,18 @@ class Loading extends AbstractModel
 
         return $this;
     }
+
+    public function getReturnedLoading() {
+
+    	return $this->returnedLoading;
+
+    }
+
+	public function setReturnedLoading($returnedLoading) {
+
+		$this->returnedLoading = $returnedLoading;
+
+    	return $this;
+
+	}
 }
