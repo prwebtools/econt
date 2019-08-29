@@ -57,7 +57,6 @@ class Client
         'Todstoychev\Econt\Request\OfficesRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
 	    'Todstoychev\Econt\Request\CitiesRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
 	    'Todstoychev\Econt\Request\CancelShipmentRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
-	    'Todstoychev\Econt\Request\CancelShipmentRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
     ];
 
     /**
