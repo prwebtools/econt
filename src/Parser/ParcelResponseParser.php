@@ -5,6 +5,7 @@ namespace Todstoychev\Econt\Parser;
 use Todstoychev\Econt\Model\Currency;
 use Todstoychev\Econt\Model\Error;
 use Todstoychev\Econt\Model\LoadingPrice;
+use Todstoychev\Econt\Model\NextParcel;
 use Todstoychev\Econt\Model\ParcelResult;
 use Todstoychev\Econt\Response\ParcelResponse;
 
@@ -23,6 +24,7 @@ class ParcelResponseParser implements Parser
             $parcelResult->setDeliveryDate(new \DateTime($row->delivery_date));
             $parcelResult->setLoadingPrice($this->getLoadingPrice($row->loading_price));
             $parcelResult->setPdfUrl($row->pdf_url);
+            if(isset($row->next_parcels->e)) $parcelResult->setNextParcels($this->nextParcels($row->next_parcels->e));
 
             $error = (string) $row->error;
             $errorCode = (string) $row->error_code;
@@ -54,5 +56,16 @@ class ParcelResponseParser implements Parser
         $loadingPrice->setCurrency($currency);
 
         return $loadingPrice;
+    }
+
+    private function nextParcels(\SimpleXMLElement $parcel) {
+
+		$next = new NextParcel();
+		$next->setPdfUrl($parcel->pdf_url);
+		$next->setNum($parcel->num);
+		$next->setReason($parcel->reason);
+
+		return $next;
+
     }
 }
