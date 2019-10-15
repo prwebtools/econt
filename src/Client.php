@@ -44,6 +44,8 @@ class Client
         'Todstoychev\Econt\Request\OfficesRequest' => 'Todstoychev\Econt\Parser\OfficeResponseParser',
 	    'Todstoychev\Econt\Request\CitiesRequest' => 'Todstoychev\Econt\Parser\CitiesResponseParser',
 	    'Todstoychev\Econt\Request\CancelShipmentRequest' => 'Todstoychev\Econt\Parser\CancelShipmentResponseParser',
+	    'Todstoychev\Econt\Request\CallCourierRequest' => 'Todstoychev\Econt\Parser\CallCourierResponseParser',
+	    'Todstoychev\Econt\Request\CancelCourierRequest' => 'Todstoychev\Econt\Parser\CancelCourierResponseParser',
     ];
 
     /**
@@ -57,6 +59,8 @@ class Client
         'Todstoychev\Econt\Request\OfficesRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
 	    'Todstoychev\Econt\Request\CitiesRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
 	    'Todstoychev\Econt\Request\CancelShipmentRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
+	    'Todstoychev\Econt\Request\CallCourierRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
+	    'Todstoychev\Econt\Request\CancelCourierRequest' => 'Todstoychev\Econt\RequestBuilder\ServiceRequestBuilder',
     ];
 
     /**

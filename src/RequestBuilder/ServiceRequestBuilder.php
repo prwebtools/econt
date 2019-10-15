@@ -3,6 +3,8 @@
 namespace Todstoychev\Econt\RequestBuilder;
 
 use Todstoychev\Econt\Request\AddressValidationRequest;
+use Todstoychev\Econt\Request\CallCourier;
+use Todstoychev\Econt\Request\CallCourierRequest;
 use Todstoychev\Econt\Request\CancelShipmentRequest;
 
 class ServiceRequestBuilder extends AbstractRequestBuilder
@@ -14,6 +16,8 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
         'Todstoychev\Econt\Request\OfficesRequest' => 'offices',
 	    'Todstoychev\Econt\Request\CitiesRequest' => 'cities',
 	    'Todstoychev\Econt\Request\CancelShipmentRequest' => 'cancel_shipments',
+	    'Todstoychev\Econt\Request\CallCourierRequest' => 'get_courier_by_address',
+	    'Todstoychev\Econt\Request\CancelCourierRequest' => 'cancel_shipments ',
     ];
 
     public function createSimpleXML($request)
@@ -41,6 +45,16 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
 
 			$cancelShipment = $xml->addChild('cancel_shipments');
 			$cancelShipment->addChild('num', $request->getShipmentID());
+
+        } elseif($request instanceof CallCourierRequest) {
+
+			$xml->addChild('city_code', 41);
+			$xml->addChild('city_name', $request->getAddress()->getCityName());
+			$xml->addChild('post_code', $request->getAddress()->getPostCode());
+			$xml->addChild('street', $request->getAddress()->getStreet());
+			$xml->addChild('street_num', $request->getAddress()->getStreetNum());
+			$xml->addChild('shipment_type', $request->getShipmentType());
+			$xml->addChild('weight', $request->getWeight());
 
         }
 
