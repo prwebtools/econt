@@ -2,7 +2,7 @@
 
 namespace Todstoychev\Econt\Request;
 
-class CancelShipmentRequest {
+class CancelCourierRequest {
 
 	private $courier_id;
 

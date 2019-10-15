@@ -49,6 +49,8 @@ class ParcelRequest
      * */
     private $instruction;
 
+    private $courier_only = false;
+
     /**
      * @return bool
      */
@@ -219,5 +221,19 @@ class ParcelRequest
 		$this->instruction = $instruction;
 
 		return $this;
+	}
+
+	public function setCourierOnly(bool $bool){
+
+		$this->courier_only = $bool;
+
+		return $this;
+
+	}
+
+	public function getCourierOnly() {
+
+		return $this->courier_only;
+
 	}
 }

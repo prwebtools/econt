@@ -40,6 +40,12 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
         }
 
         if($request->getInstruction()) $this->setInstruction($row, $request->getInstruction());
+
+        if($request->getCourierOnly()) {
+        	$cr = $row->addChild('courier_request');
+        	$cr->addChild('only_courier_request');
+		}
+
         $this->setServices($row, $request->getServices());
         $this->setPayment($row, $request->getPayment());
 
