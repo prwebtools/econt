@@ -43,7 +43,9 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
 
         if($request->getCourierOnly()) {
         	$cr = $row->addChild('courier_request');
-        	$cr->addChild('only_courier_request');
+			$cr->addChild('only_courier_request', '1');
+			$cr->addChild('time_from', '10:00');
+			$cr->addChild('time_to', '17:00');
 		}
 
         $this->setServices($row, $request->getServices());

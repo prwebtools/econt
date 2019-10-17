@@ -45,7 +45,7 @@ class Client
 	    'Todstoychev\Econt\Request\CitiesRequest' => 'Todstoychev\Econt\Parser\CitiesResponseParser',
 	    'Todstoychev\Econt\Request\CancelShipmentRequest' => 'Todstoychev\Econt\Parser\CancelShipmentResponseParser',
 	    'Todstoychev\Econt\Request\CallCourierRequest' => 'Todstoychev\Econt\Parser\CallCourierResponseParser',
-	    'Todstoychev\Econt\Request\CancelCourierRequest' => 'Todstoychev\Econt\Parser\CancelCourierResponseParser',
+	    'Todstoychev\Econt\Request\CancelCourierRequest' => 'Todstoychev\Econt\Parser\CancelCourierParser',
     ];
 
     /**
