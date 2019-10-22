@@ -4,17 +4,17 @@ namespace Todstoychev\Econt\Request;
 
 class CancelShipmentRequest {
 
-	private $courier_id;
+	private $shipment_id;
 
-	public function getCourierID() {
+	public function getShipmentID() {
 
-		return $this->courier_id;
+		return $this->shipment_id;
 
 	}
 
-	public function setCourierID(string $courier_id) {
+	public function setShipmentID(string $shipment_id) {
 
-		$this->courier_id = $courier_id;
+		$this->shipment_id = $shipment_id;
 
 		return $this;
 
