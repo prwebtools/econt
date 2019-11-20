@@ -65,6 +65,7 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
         $row->addChild('name_person', $sender->getNamePerson());
         $row->addChild('email', $sender->getEmail());
         $row->addChild('quarter', $sender->getQuarter());
+	    $row->addChild('office_code', $sender->getOfficeCode());
 
         if ($sender->getStreet()) {
             $row->addChild('street', $sender->getStreet()->getName());
