@@ -7,7 +7,7 @@ class Instruction extends AbstractModel{
 
 	private $template;
 
-	public function setTemplate(string $template) {
+	public function setTemplate($template) {
 
 		$this->template = $template;
 
