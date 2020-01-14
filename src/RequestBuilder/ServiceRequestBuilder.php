@@ -15,6 +15,7 @@ class ServiceRequestBuilder extends AbstractRequestBuilder
         'Todstoychev\Econt\Request\QuartersRequest' => 'cities_quarters',
         'Todstoychev\Econt\Request\AddressValidationRequest' => 'check_address',
         'Todstoychev\Econt\Request\OfficesRequest' => 'offices',
+        'Todstoychev\Econt\Request\CountriesRequest' => 'countries',
 	    'Todstoychev\Econt\Request\CitiesRequest' => 'cities',
 	    'Todstoychev\Econt\Request\CancelShipmentRequest' => 'cancel_shipments',
 	    'Todstoychev\Econt\Request\CallCourierRequest' => 'get_courier_by_address',

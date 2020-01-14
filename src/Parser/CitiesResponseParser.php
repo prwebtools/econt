@@ -3,6 +3,7 @@
 namespace Todstoychev\Econt\Parser;
 
 use Todstoychev\Econt\Model\Cities;
+use Todstoychev\Econt\Model\City;
 use Todstoychev\Econt\Response\CitiesResponse;
 
 class CitiesResponseParser
@@ -12,25 +13,21 @@ class CitiesResponseParser
 		$response = new CitiesResponse();
 
 		foreach ($xml->cities->e as $row) {
+			$city = new City();
+			$city->setId((int)$row->id);
+			$city->setType((string)$row->type);
+			$city->setPostCode((string)$row->post_code);
+            $city->setName((string)$row->name);
+            $city->setNameEnglish((string)$row->name_en);
+            $city->setRegion((string)$row->region);
+            $city->setRegionEnglish((string)$row->region_en);
+            $city->setZoneId((int)$row->id_zone);
+            $city->setCountryId((int)$row->id_country);
+			$city->setOfficeId((int)$row->id_office);
 
-			$cities = new Cities();
-			$cities->setId((int) $row->id);
-			$cities->setType($row->type);
-			$cities->setPostCode($row->post_code);
-			$cities->setIdZone($row->id_zone);
-			$cities->setName($row->name);
-			$cities->setNameEnglish($row->name_en);
-			$cities->setRegion($row->region);
-			$cities->setRegionEnglish($row->region_en);
-			$cities->setCountryId($row->id_country);
-			$cities->setOfficeId($row->id_office);
-
-			$response->addCity($cities);
-
+			$response->addCity($city);
 		}
 
 		return $response;
-
 	}
-
 }

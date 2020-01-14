@@ -14,11 +14,11 @@ class ZonesResponseParser implements Parser
         foreach ($xml->zones->e as $zoneXml) {
             $zone = new Zone();
             $zone->setId((int) $zoneXml->id);
-            $zone->setName($zoneXml->name);
-            $zone->setNameEnglish($zoneXml->name_en);
+            $zone->setName((string)$zoneXml->name);
+            $zone->setNameEnglish((string)$zoneXml->name_en);
             $zone->setNational((bool) $zoneXml->national);
             $zone->setIsEe((bool) $zoneXml->is_ee);
-            $zone->setUpdatedOn(new \DateTime($zoneXml->updated_time));
+            $zone->setUpdatedOn(new \DateTime((string)$zoneXml->updated_time));
 
             $response->addZone($zone);
         }

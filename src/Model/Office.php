@@ -92,6 +92,9 @@ class Office extends AbstractModel
      */
     protected $streetId;
 
+    protected $latitude;
+    protected $longitude;
+
     /**
      * @var Street
      */
@@ -709,6 +712,42 @@ class Office extends AbstractModel
     {
         $this->hubNameEnglish = $hubNameEnglish;
 
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+    /**
+     * @param string $latitude
+     * @return Office
+     */
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    /**
+     * @param string $longitude
+     * @return Office
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
         return $this;
     }
 

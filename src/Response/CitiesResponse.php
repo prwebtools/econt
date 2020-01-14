@@ -2,7 +2,7 @@
 
 namespace Todstoychev\Econt\Response;
 
-use Todstoychev\Econt\Model\Cities;
+use Todstoychev\Econt\Model\City;
 
 class CitiesResponse {
 
@@ -24,11 +24,11 @@ class CitiesResponse {
 	 *
 	 * @return CitysResponse
 	 */
-	public function addCity(Cities $city)
+	public function addCity(City $city)
 	{
 		$this->cities[] = $city;
 
 		return $this;
 	}
-	
+
 }
