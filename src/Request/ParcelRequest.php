@@ -9,6 +9,11 @@ use Todstoychev\Econt\Model\Services;
 
 class ParcelRequest
 {
+    private const CALCULATION_ONLY_ENABLED = true;
+    private const CALCULATION_ONLY_DISABLED = false;
+    private const VALIDATION_ENABLED = true;
+    private const VALIDATION_DISABLED = false;
+
     /**
      * @var bool дали да се прави само валидация, без да се генерират товарителници
      */
@@ -44,9 +49,9 @@ class ParcelRequest
      */
     private $payment;
 
-    /*
+    /**
      * @var Instruction
-     * */
+     */
     private $instruction;
 
     private $courier_only = false;
@@ -63,10 +68,31 @@ class ParcelRequest
      * @param bool $validate
      *
      * @return ParcelRequest
+     * @deprecated use enableValidation() instead
      */
     public function setValidate($validate)
     {
         $this->validate = $validate;
+
+        return $this;
+    }
+
+    /**
+     * @return ParcelRequest
+     */
+    public function enableValidation()
+    {
+        $this->validate = self::VALIDATION_ENABLED;
+
+        return $this;
+    }
+
+    /**
+     * @return ParcelRequest
+     */
+    public function disableValidation()
+    {
+        $this->validate = self::VALIDATION_DISABLED;
 
         return $this;
     }
@@ -83,10 +109,31 @@ class ParcelRequest
      * @param bool $onlyCalculate
      *
      * @return ParcelRequest
+     * @deprecated use enableCalculationOnly() instead
      */
     public function setOnlyCalculate($onlyCalculate)
     {
         $this->onlyCalculate = $onlyCalculate;
+
+        return $this;
+    }
+
+    /**
+     * @return ParcelRequest
+     */
+    public function enableCalculationOnly()
+    {
+        $this->onlyCalculate = self::CALCULATION_ONLY_ENABLED;
+
+        return $this;
+    }
+
+    /**
+     * @return ParcelRequest
+     */
+    public function disableCalculationOnly()
+    {
+        $this->onlyCalculate = self::CALCULATION_ONLY_DISABLED;
 
         return $this;
     }

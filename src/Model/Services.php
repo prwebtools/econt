@@ -98,7 +98,7 @@ class Services
 
 	public function setSmsNotification(bool $status) {
 
-		if($status) $this->sms_notification = 'ON';
+		$this->oc_currency = $status;
 
 		return $this;
 
