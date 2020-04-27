@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bozhidar.hristov
- * Date: 6/9/17
- * Time: 6:29 PM.
- */
 
-namespace Todstoychev\Econt\Model;
+namespace Todstoychev\Econt\Entity;
 
 /**
  * Class Shipment
- * @package Todstoychev\Econt\Model
- * @deprecated Use Todstoychev\Econt\Entity when be replaced.
+ * @package Todstoychev\Econt\Entity
+ * @todo Rework it.
  */
 class Shipment extends AbstractModel
 {

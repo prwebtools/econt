@@ -6,8 +6,8 @@ use Todstoychev\Econt\Model\Instruction;
 use Todstoychev\Econt\Model\Payment;
 use Todstoychev\Econt\Model\Receiver;
 use Todstoychev\Econt\Model\Sender;
-use Todstoychev\Econt\Model\Services;
 use Todstoychev\Econt\Model\Shipment;
+use Todstoychev\Econt\Entity\Services;
 use Todstoychev\Econt\Request\ParcelRequest;
 
 class ParcelRequestBuilder extends AbstractRequestBuilder
@@ -36,7 +36,6 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
 	            $returnedLoading->addChild('first_loading_num', $loading->getReturnedLoading()->getLoadingNum());
 	            $returnedLoading->addChild('first_loading_receiver_phone', $loading->getReturnedLoading()->getReceiverPhone());
             }
-
         }
 
         if($request->getInstruction()) $this->setInstruction($row, $request->getInstruction());
@@ -49,11 +48,11 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
 		}
 
         if ($request->getServices()) {
-            $this->setServices($row, $request->getServices());
+            $this->addServices($row, $request->getServices());
         }
 
         if ($request->getPayment()) {
-            $this->setPayment($row, $request->getPayment());
+            $this->addPayment($row, $request->getPayment());
         }
 
         return $xml;
@@ -145,12 +144,19 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
      *
      * @return \SimpleXMLElement
      */
-    private function setServices(\SimpleXMLElement $row, Services $services)
+    private function addServices(\SimpleXMLElement $row, Services $services)
     {
         $servicesRow = $row->addChild('services');
-        $servicesRow->addChild('cd', $services->getPrice())->addAttribute('type', $services->getCdType());
-        $servicesRow->addChild('oc', $services->getOc());
-		$servicesRow->addChild('oc_currency', $services->getOcCurrency());
+
+        if ($services->hasCd()) {
+            $servicesRow
+                ->addChild('cd', $services->getCd()->getAmount())
+                ->addChild('cd_currency', $services->getCd()->getCurrency())
+                ->addAttribute('type', $services->getCd()->getType());
+        }
+
+        $servicesRow->addChild('oc', $services->getOc()->getAmount());
+		$servicesRow->addChild('oc_currency', $services->getOc()->getCurrency());
 		$servicesRow->addChild('sms_notification', $services->getSmsNotification());
 
         return $row;
@@ -161,15 +167,25 @@ class ParcelRequestBuilder extends AbstractRequestBuilder
      * @param Payment           $payment
      *
      * @return \SimpleXMLElement
+     * @todo replace Model\Payment with Entity\Payment
      */
-    private function setPayment(\SimpleXMLElement $row, Payment $payment)
+    private function addPayment(\SimpleXMLElement $row, Payment $payment)
     {
         $paymentRow = $row->addChild('payment');
         $paymentRow->addChild('method', $payment->getMethod());
         $paymentRow->addChild('side', $payment->getSide());
-        $paymentRow->addChild('receiver_share_sum', $payment->getReceiverShareSum());
-        $paymentRow->addChild('share_percent', $payment->getSharePercent());
-        $paymentRow->addChild('key_word', $payment->getKeyWord());
+
+        if ($payment->getReceiverShareSum()) {
+            $paymentRow->addChild('receiver_share_sum', $payment->getReceiverShareSum());
+        }
+
+        if ($payment->getReceiverShareSum()) {
+            $paymentRow->addChild('share_percent', $payment->getSharePercent());
+        }
+
+        if ($payment->getReceiverShareSum()) {
+            $paymentRow->addChild('key_word', $payment->getKeyWord());
+        }
 
         return $row;
     }

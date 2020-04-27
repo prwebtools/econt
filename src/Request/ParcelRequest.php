@@ -5,7 +5,7 @@ namespace Todstoychev\Econt\Request;
 use Todstoychev\Econt\Model\Instruction;
 use Todstoychev\Econt\Model\Loading;
 use Todstoychev\Econt\Model\Payment;
-use Todstoychev\Econt\Model\Services;
+use Todstoychev\Econt\Entity\Services;
 
 class ParcelRequest
 {

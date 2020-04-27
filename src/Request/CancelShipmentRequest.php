@@ -2,22 +2,18 @@
 
 namespace Todstoychev\Econt\Request;
 
-class CancelShipmentRequest {
+class CancelShipmentRequest
+{
+    private $shipment_id;
 
-	private $shipment_id;
+    public function getShipmentID()
+    {
+        return $this->shipment_id;
+    }
 
-	public function getShipmentID() {
-
-		return $this->shipment_id;
-
-	}
-
-	public function setShipmentID(string $shipment_id) {
-
-		$this->shipment_id = $shipment_id;
-
-		return $this;
-
-	}
-
+    public function setShipmentID(string $shipment_id)
+    {
+        $this->shipment_id = $shipment_id;
+        return $this;
+    }
 }
